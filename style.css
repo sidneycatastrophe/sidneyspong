@@ -1,0 +1,214 @@
+:root {
+  --purple-bg: #4e3bff;      /* main background */
+  --deep-purple: #2b1f80;
+  --orange: #ff7b21;
+  --cream: #ffe9d1;
+  --offwhite: #fff8f1;
+  --text-dark: #1e1230;
+  --text-light: #f7f7ff;
+  --round: 24px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--purple-bg);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ====== Hero ====== */
+
+.hero {
+  padding: 2.5rem 1.5rem 3.5rem;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
+  letter-spacing: 0.08em;
+  font-weight: 900;
+  margin: 0 0 0.4rem;
+  text-transform: uppercase;
+}
+
+.hero-text h2 {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  margin: 0 0 1.5rem;
+  font-weight: 800;
+}
+
+.label {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: var(--orange);
+  margin-bottom: 0.5rem;
+}
+
+.hero-sub {
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--orange);
+  color: #1d1206;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+}
+
+.cta-button.large {
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+
+.cta-button:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+/* Placeholder for your mic/squiggle graphic */
+
+.hero-graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mic-placeholder {
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  border: 3px solid var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  background: radial-gradient(circle at 30% 30%, #7df1ff, #00a2ff);
+}
+
+/* ====== Sections ====== */
+
+.section {
+  padding: 1rem 1.5rem 2.5rem;
+}
+
+.section-card {
+  max-width: 1100px;
+  margin: 0 auto 1.5rem;
+  background: var(--offwhite);
+  border-radius: var(--round);
+  padding: 2rem 2.2rem;
+  color: var(--text-dark);
+}
+
+.section-card h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 2rem;
+}
+
+.section-card ul {
+  padding-left: 1.1rem;
+  margin: 0.3rem 0 0;
+}
+
+/* ====== Testimonial ====== */
+
+.testimonials {
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-card {
+  max-width: 420px;
+  background: var(--orange);
+  color: var(--text-dark);
+  padding: 2rem 2.2rem;
+  border-radius: var(--round);
+  position: relative;
+}
+
+.quote-mark {
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0 0 0.6rem;
+}
+
+.quote-text {
+  margin: 0 0 1rem;
+  font-weight: 700;
+}
+
+.quote-name {
+  font-weight: 800;
+  text-align: right;
+}
+
+/* ====== Contact section ====== */
+
+.contact {
+  text-align: center;
+}
+
+.contact h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ====== Footer ====== */
+
+.footer {
+  padding: 1.2rem 1.5rem 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* ====== Responsive tweaks ====== */
+
+@media (max-width: 800px) {
+  .hero-inner,
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 1.8rem;
+  }
+
+  .hero-graphic {
+    order: -1;
+  }
+
+  .section-card {
+    padding: 1.6rem 1.4rem;
+  }
+}
