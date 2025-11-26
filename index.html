@@ -1,90 +1,316 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sidney Spong – Vocal Coach & Performer</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #050816;
-      color: #f5f5f5;
-      display: flex;
-      min-height: 100vh;
-      align-items: center;
-      justify-content: center;
-    }
-    .card {
-      max-width: 680px;
-      padding: 2.5rem 2rem;
-      border-radius: 18px;
-      background: rgba(12, 12, 24, 0.96);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.04);
-    }
-    h1 {
-      margin-top: 0;
-      font-size: 2rem;
-      letter-spacing: 0.05em;
-    }
-    h2 {
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #a3a3ff;
-      margin-top: 0;
-    }
-    p {
-      line-height: 1.6;
-      margin: 0.3rem 0;
-    }
-    .tagline {
-      margin-bottom: 1.2rem;
-      font-weight: 500;
-    }
-    .list {
-      margin: 1rem 0 1.5rem;
-      padding-left: 1.1rem;
-      font-size: 0.98rem;
-    }
-    .list li {
-      margin: 0.2rem 0;
-    }
-    .contact {
-      margin-top: 1.5rem;
-      font-size: 0.96rem;
-    }
-    .contact a {
-      color: #c7c7ff;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(199, 199, 255, 0.5);
-    }
-    .contact a:hover {
-      opacity: 0.85;
-    }
-  </style>
+  <title>Sidney Spong – Vocal Coaching</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="card">
-    <h2>Vocal Coaching • Performance</h2>
-    <h1>Sidney Spong</h1>
-    <p class="tagline">Find your voice. Discover your sound.</p>
-
-    <p><strong>Grade 8 vocalist trained by leading coaches.</strong></p>
-    <ul class="list">
-      <li>Experience teaching singers of all ages.</li>
-      <li>Performed on TV, radio, and for Royalty.</li>
-      <li>Background in musical theatre, bands, and regular gigging.</li>
-      <li>Multi-genre performer who fosters variety and confidence in every student.</li>
-      <li>Access to professional recording equipment & rehearsal spaces.</li>
-    </ul>
-
-    <div class="contact">
-      <p>For lessons, bookings & enquiries:</p>
-      <!-- change this email to your new Cloudflare-routed address -->
-      <p><a href="mailto:info@sydneyspong.uk">info@sydneyspong.uk</a></p>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="label">Vocal Coaching • Performance Training • Songwriting</p>
+        <h1>SIDNEY&nbsp;SPONG</h1>
+        <h2>Find your voice.<br>Discover your sound.</h2>
+        <a class="cta-button" href="mailto:info@sidneyspong.uk">
+          Book your free first session
+        </a>
+        <p class="hero-sub">
+          All levels and ages welcome.
+        </p>
+      </div>
+      <div class="hero-graphic">
+        <!-- Swap this for your mic squiggle graphic later -->
+        <div class="mic-placeholder">🎤</div>
+      </div>
     </div>
+  </header>
+
+  <main>
+    <section class="section section-card split">
+      <div>
+        <h3>What my lessons will help you do</h3>
+        <ul>
+          <li>Build strong vocal technique</li>
+          <li>Write original songs</li>
+          <li>Prepare for performance, auditions &amp; recording</li>
+          <li>Develop your unique style</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Styles &amp; specialisms</h3>
+        <p>
+          Specialising in rock, pop, and contemporary styles —
+          open to all genres.
+        </p>
+        <p>
+          Multi-genre coaching that encourages variety, creativity,
+          and confidence.
+        </p>
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="testimonial-card">
+        <p class="quote-mark">“</p>
+        <p class="quote-text">
+          Supportive, inspiring, and really knows how to get the best out of you.
+        </p>
+        <p class="quote-name">Ery, 41</p>
+      </div>
+    </section>
+
+    <section class="section section-card about">
+      <h3>About Sidney</h3>
+      <p>
+        Grade 8 vocalist trained by leading coaches. Experience teaching all ages.
+        Performed on TV, radio, and for Royalty. Background in musical theatre,
+        bands, and regular gigging.
+      </p>
+      <p>
+        Multi-genre performer who fosters variety and confidence in every student,
+        with access to professional recording equipment and rehearsal spaces.
+      </p>
+    </section>
+
+    <section class="section contact">
+      <h3>Ready to start?</h3>
+      <p>Contact me to book a free first session or ask any questions.</p>
+      <a class="cta-button large" href="mailto:info@sidneyspong.uk">
+        Email&nbsp;info@sidneyspong.uk
+      </a>
+    </section>
   </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Sidney Spong – Vocal Coaching</p>
+  </footer>
+
+  <script>
+    // Tiny helper to keep the year current
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+3. Create style.css
+In the same repo, create a new file called style.css and paste this:
+
+css
+Copy code
+/* ====== Base styles & colours – tweak these to match your poster exactly ====== */
+
+:root {
+  --purple-bg: #4e3bff;      /* main background */
+  --deep-purple: #2b1f80;
+  --orange: #ff7b21;
+  --cream: #ffe9d1;
+  --offwhite: #fff8f1;
+  --text-dark: #1e1230;
+  --text-light: #f7f7ff;
+  --round: 24px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--purple-bg);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ====== Hero ====== */
+
+.hero {
+  padding: 2.5rem 1.5rem 3.5rem;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
+  letter-spacing: 0.08em;
+  font-weight: 900;
+  margin: 0 0 0.4rem;
+  text-transform: uppercase;
+}
+
+.hero-text h2 {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  margin: 0 0 1.5rem;
+  font-weight: 800;
+}
+
+.label {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: var(--orange);
+  margin-bottom: 0.5rem;
+}
+
+.hero-sub {
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--orange);
+  color: #1d1206;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+}
+
+.cta-button.large {
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+
+.cta-button:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+/* Placeholder for your mic/squiggle graphic */
+
+.hero-graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mic-placeholder {
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  border: 3px solid var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  background: radial-gradient(circle at 30% 30%, #7df1ff, #00a2ff);
+}
+
+/* ====== Sections ====== */
+
+.section {
+  padding: 1rem 1.5rem 2.5rem;
+}
+
+.section-card {
+  max-width: 1100px;
+  margin: 0 auto 1.5rem;
+  background: var(--offwhite);
+  border-radius: var(--round);
+  padding: 2rem 2.2rem;
+  color: var(--text-dark);
+}
+
+.section-card h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 2rem;
+}
+
+.section-card ul {
+  padding-left: 1.1rem;
+  margin: 0.3rem 0 0;
+}
+
+/* ====== Testimonial ====== */
+
+.testimonials {
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-card {
+  max-width: 420px;
+  background: var(--orange);
+  color: var(--text-dark);
+  padding: 2rem 2.2rem;
+  border-radius: var(--round);
+  position: relative;
+}
+
+.quote-mark {
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0 0 0.6rem;
+}
+
+.quote-text {
+  margin: 0 0 1rem;
+  font-weight: 700;
+}
+
+.quote-name {
+  font-weight: 800;
+  text-align: right;
+}
+
+/* ====== Contact section ====== */
+
+.contact {
+  text-align: center;
+}
+
+.contact h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ====== Footer ====== */
+
+.footer {
+  padding: 1.2rem 1.5rem 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* ====== Responsive tweaks ====== */
+
+@media (max-width: 800px) {
+  .hero-inner,
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 1.8rem;
+  }
+
+  .hero-graphic {
+    order: -1;
+  }
+
+  .section-card {
+    padding: 1.6rem 1.4rem;
+  }
+}
