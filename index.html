@@ -1,303 +1,451 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/index.html b/index.html
-index 02f84d320e235749480557bce381321088520e83..1b6af7d4a3859cf9a76c1d9603cf205b086e2bf8 100644
---- a/index.html
-+++ b/index.html
-@@ -1,114 +1,123 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-   <meta charset="UTF-8" />
-   <title>Sidney Spong | Vocal Coaching</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <meta
-     name="description"
-     content="Vocal coaching, songwriting support, and artist development with Sidney Spong in Folkestone."
-   />
-   <link rel="stylesheet" href="assets/css/style.css" />
- </head>
- <body>
-   <!-- ================= HEADER ================= -->
-   <header class="site-header">
-     <div class="container header-inner">
-       <a href="#top" class="logo">
--        <img src="assets/Sidney_Spong_Title.svg" alt="Sidney Spong logo" />
-+        <img
-+          src="assets/images/Sidney_Spong_Title.svg"
-+          alt="Sidney Spong logo"
-+          loading="lazy"
-+        />
-       </a>
-       <nav class="main-nav">
-         <a href="#lessons">Lessons</a>
-         <a href="#about">About</a>
-         <a href="#testimonials">Testimonials</a>
-         <a href="#faq">FAQ</a>
-         <a href="#contact" class="nav-cta">Book a Session</a>
-       </nav>
-     </div>
-   </header>
- 
-   <main id="top">
-     <!-- ================= HERO ================= -->
-     <section class="hero">
-       <div class="container hero-inner">
-         <div class="hero-text">
-           <p class="eyebrow">Folkestone · Vocal Coaching</p>
-           <h1>
-             FIND YOUR VOICE.<br />
-             DISCOVER YOUR SOUND.
-           </h1>
-           <p class="hero-subtitle">
-             Grade 8 vocalist offering one-to-one vocal coaching, songwriting support,
-             and artist development in a warm, creative studio space.
-           </p>
-           <div class="hero-actions">
-             <a href="#contact" class="btn primary">Book a Free Intro Chat</a>
-             <a href="#lessons" class="btn ghost">View Lesson Packages</a>
-           </div>
- 
-           <div class="hero-quote">
-             <span class="quote-mark">“</span>
-             <p>
-               Sidney creates a safe, encouraging space where you're never pressured but
-               always supported.
-             </p>
-             <span class="quote-name">– Ery, vocal student</span>
-           </div>
-         </div>
- 
-         <div class="hero-visual">
-           <img
--            src="assets/Discover_Your_Voice.svg"
-+            src="assets/images/Discover_Your_Voice.svg"
-             alt="Discover your voice graphic"
-             class="hero-graphic"
-           />
-         </div>
-       </div>
-     </section>
- 
-     <!-- ================= HIGHLIGHTS / SKILLS ================= -->
-     <section class="highlights">
-       <div class="container highlights-grid">
-         <article class="highlight-card">
--          <img src="assets/Main_Skills.svg" alt="" class="icon" />
-+          <img src="assets/images/Main_Skills.svg" alt="" class="icon" loading="lazy" />
-           <h3>Technical & Creative</h3>
-           <p>
-             Build range, tone, and control while exploring your unique sound, style,
-             and artistic identity.
-           </p>
-         </article>
-         <article class="highlight-card">
--          <img src="assets/Microphone.svg" alt="" class="icon" />
-+          <img src="assets/images/Microphone.svg" alt="" class="icon" loading="lazy" />
-           <h3>Performance Ready</h3>
-           <p>
-             Prepare for gigs, auditions, and recordings with real-world performance
-             experience behind you.
-           </p>
-         </article>
-         <article class="highlight-card">
--          <img src="assets/Discover_Your_Voice.svg" alt="" class="icon" />
-+          <img
-+            src="assets/images/Discover_Your_Voice.svg"
-+            alt=""
-+            class="icon"
-+            loading="lazy"
-+          />
-           <h3>Supportive Coaching</h3>
-           <p>
-             A warm, adaptive teaching style that meets you where you are – from
-             beginners to experienced artists.
-           </p>
-         </article>
-       </div>
-     </section>
- 
-     <!-- ================= LESSON PACKAGES ================= -->
-     <section id="lessons" class="section">
-       <div class="container section-inner">
-         <header class="section-header">
-           <h2>Lesson Packages</h2>
-           <p>
-             A flexible range of options designed to support every stage of your vocal
-             and creative journey.
-           </p>
-         </header>
- 
-         <div class="pricing-grid">
-           <!-- Single 30 -->
-           <article class="pricing-card">
-             <h3>Single Lesson</h3>
-             <p class="session-length">30-Minute Session — <span>£25</span></p>
-@@ -229,80 +238,105 @@
-             <h3>How I Teach</h3>
-             <p>
-               My coaching style is warm, encouraging, and adaptable. I focus on
-               clear, practical technique, tone and texture that feel personal to you,
-               and creativity at the heart of everything. I’m not a “by the book”
-               coach — I meet you exactly where you are.
-             </p>
-           </div>
- 
-           <div class="about-why">
-             <h3>Why Work With Me</h3>
-             <ul class="why-list">
-               <li>Grade 8 vocalist with training from leading coaches</li>
-               <li>Experience teaching all ages and levels</li>
-               <li>Performance experience across the UK</li>
-               <li>Background in musical theatre, bands, and regular gigging</li>
-               <li>Multi-genre vocalist who understands variety and nuance</li>
-               <li>Private studio with access to professional recording equipment</li>
-             </ul>
-           </div>
-         </div>
- 
-         <div class="about-media">
-           <div class="about-hero-image">
-             <img
--              src="assets/Sid_Singing_Landscape.jpg"
-+              src="assets/images/Sid_Singing_Landscape.jpg"
-               alt="Sidney singing live on stage"
-+              loading="lazy"
-             />
-           </div>
- 
-           <div class="about-carousel">
-             <div class="carousel-track">
--              <img src="assets/Sid_Singing_1.jpg" alt="Sidney singing 1" />
--              <img src="assets/Sid_Singing_2.jpg" alt="Sidney singing 2" />
--              <img src="assets/Sid_Singing_3.jpg" alt="Sidney singing 3" />
--              <img src="assets/Sid_Singing_4.JPG" alt="Sidney singing 4" />
--              <img src="assets/Sid_Singing_5.jpg" alt="Sidney singing 5" />
-+              <img
-+                src="assets/images/Sid_Singing_1.jpg"
-+                alt="Sidney singing 1"
-+                loading="lazy"
-+              />
-+              <img
-+                src="assets/images/Sid_Singing_2.jpg"
-+                alt="Sidney singing 2"
-+                loading="lazy"
-+              />
-+              <img
-+                src="assets/images/Sid_Singing_3.jpg"
-+                alt="Sidney singing 3"
-+                loading="lazy"
-+              />
-+              <img
-+                src="assets/images/Sid_Singing_4.JPG"
-+                alt="Sidney singing 4"
-+                loading="lazy"
-+              />
-+              <img
-+                src="assets/images/Sid_Singing_5.PNG"
-+                alt="Sidney singing 5"
-+                loading="lazy"
-+              />
-             </div>
-             <button class="carousel-btn prev" aria-label="Previous photo">‹</button>
-             <button class="carousel-btn next" aria-label="Next photo">›</button>
-           </div>
-         </div>
-       </div>
-     </section>
- 
-     <!-- ================= TESTIMONIALS ================= -->
-     <section id="testimonials" class="section">
-       <div class="container section-inner testimonial-layout">
-         <header class="section-header">
-           <h2>What Students Say</h2>
-         </header>
- 
-         <div class="testimonial-card">
-           <div class="testimonial-image">
--            <img src="assets/Ery_Profile_Pic.webp" alt="Ery, vocal student" />
-+            <img
-+              src="assets/images/Ery_Profile_Pic.webp"
-+              alt="Ery, vocal student"
-+              loading="lazy"
-+            />
-           </div>
-           <div class="testimonial-content">
-             <p class="testimonial-highlight">
-               “Sidney creates a safe, encouraging space where you're never pressured
-               but always supported.”
-             </p>
- 
-             <p>
-               Working with Sidney as my vocal coach has been an absolute joy. Not
-               only is he a phenomenal singer with a brilliant ear for music, but
-               he also brings a deep sense of understanding, empathy, and fun to
-               every session. His musicianship is outstanding, but what really sets
-               him apart is the way he tailors his teaching to each individual.
-             </p>
-             <p>
-               Sidney creates a safe, encouraging space where you're never pressured
-               but always supported. He listens carefully to your voice, helps you
-               discover what works for you, and celebrates your progress every step
-               of the way. His positive reinforcement is genuinely uplifting, and
-               when there’s something to improve, he approaches it with kindness
-               and clarity: “This is what we’ll work on, and we’ll get there together.”
-             </p>
-             <p>
-               He’s helped me not only with technique—like pitch matching, vocal
-               closure, and blending head and chest voice—but also with performance
-@@ -375,51 +409,51 @@
-           </details>
- 
-           <details>
-             <summary>What is your cancellation policy?</summary>
-             <p>
-               I usually ask for at least 24 hours’ notice if you need to cancel
-               or reschedule a session. This keeps the schedule fair and allows
-               that slot to be offered to someone else.
-             </p>
-           </details>
-         </div>
-       </div>
-     </section>
- 
-     <!-- ================= CONTACT ================= -->
-     <section id="contact" class="section contact-section">
-       <div class="container section-inner contact-layout">
-         <div class="contact-copy">
-           <h2>Book a Session</h2>
-           <p>
-             Ready to explore your voice, build confidence, or develop your songs?
-             Send a message with a bit about your experience, goals, and preferred
-             times, and I’ll get back to you.
-           </p>
-           <p class="contact-email">
--            Or email directly: <strong>info@sidneyspong.uk</strong>
-+            Or email directly: <strong>info@sidneyspong.uk</strong>
-             <!-- replace with your actual Cloudflare-routed address -->
-           </p>
-         </div>
- 
-         <form class="contact-form">
-           <label>
-             Name
-             <input type="text" name="name" placeholder="Your name" required />
-           </label>
-           <label>
-             Email
-             <input type="email" name="email" placeholder="Your email" required />
-           </label>
-           <label>
-             What would you like to work on?
-             <textarea
-               name="message"
-               rows="5"
-               placeholder="Tell me about your experience, goals, or any questions you have."
-               required
-             ></textarea>
-           </label>
-           <button type="submit" class="btn primary" disabled>
-             Send Message (setup pending)
-           </button>
- 
-EOF
-)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sidney Spong · Vocal Coaching & Artist Development</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Vocal coaching, songwriting support and artist development with Sidney Spong in Folkestone – in-person and online."
+  />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">
+        <img
+          src="assets/images/Sidney_Spong_Title.svg"
+          alt="Sidney Spong Vocal Coaching logo"
+        />
+      </a>
+      <nav class="main-nav">
+        <a href="#about">About</a>
+        <a href="#lessons">Lessons</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="btn btn-primary header-cta">Book a lesson</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-tagline">Folkestone · In-person & online</p>
+          <h1>
+            Discover your voice.<br />
+            Shape your sound.
+          </h1>
+          <p class="hero-subtitle">
+            Grade 8 vocalist, songwriter & actor offering
+            <strong>bespoke vocal coaching, songwriting support and artist development</strong>.
+          </p>
+
+          <ul class="hero-list">
+            <li>Technique, tone & range – without losing your personality</li>
+            <li>Supportive, creative coaching for all levels</li>
+            <li>Private studio with professional recording setup</li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Book a session</a>
+            <a href="#lessons" class="btn btn-ghost">View lesson packages</a>
+          </div>
+
+          <div class="hero-quote">
+            <span class="quote-mark">“</span>
+            <p>
+              Working with Sidney has been an absolute joy. He creates a safe,
+              encouraging space where you’re never pressured but always supported.
+            </p>
+            <p class="quote-author">– Ery, vocal student</p>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-graphic">
+            <img
+              src="assets/images/Discover_Your_Voice.svg"
+              alt="Discover your voice graphic"
+              class="hero-main-graphic"
+            />
+            <img
+              src="assets/images/Microphone.svg"
+              alt="Microphone icon"
+              class="hero-mic"
+            />
+          </div>
+          <div class="hero-tag-cards">
+            <div class="tag-card">
+              <img
+                src="assets/images/Main_Skills.svg"
+                alt="Vocal skills icon"
+              />
+              <p>Technique & tone</p>
+            </div>
+            <div class="tag-card">
+              <p>Songwriting · Performance · Recording</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT / CAROUSEL ===== -->
+    <section id="about" class="about">
+      <div class="container about-inner">
+        <div class="about-copy">
+          <h2>About Me</h2>
+          <p>
+            Hi, I’m Sidney — a vocalist, songwriter, and actor based in
+            <strong>Folkestone</strong>. I’ve spent years performing across the UK, working on TV
+            and radio, collaborating with bands and artists, and developing my sound in
+            studios and live settings. Music isn’t just something I do — it’s the world I
+            live in every day.
+          </p>
+          <p>
+            I’ve trained with some of the UK’s leading vocal coaches – including
+            <strong>Kate Cameron, Gareth Malone, Nicola Palmer and ILĀ</strong> – and their
+            guidance helped me develop a technique that’s expressive, flexible, and rooted
+            in real artistry rather than rigid rules.
+          </p>
+          <p>
+            I bring all of that experience into my teaching, whether that’s strengthening
+            your voice, shaping a song you’re writing, or recording vocals in a way that
+            finally feels like <em>you</em>.
+          </p>
+
+          <ul class="about-highlights">
+            <li>Grade 8 vocalist with multi-genre experience</li>
+            <li>Background in musical theatre, bands & regular gigging</li>
+            <li>Private studio with professional recording equipment</li>
+          </ul>
+        </div>
+
+        <div class="about-media">
+          <div class="about-carousel">
+            <img
+              id="about-carousel-image"
+              src="assets/images/Sid_Singing_Landscape.jpg"
+              alt="Sidney performing live"
+            />
+            <button
+              class="carousel-control prev"
+              aria-label="Previous photo"
+            >
+              ‹
+            </button>
+            <button
+              class="carousel-control next"
+              aria-label="Next photo"
+            >
+              ›
+            </button>
+          </div>
+          <p class="carousel-caption">
+            Live performance stills – capturing the energy and storytelling at the heart of
+            every session.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LESSON PACKAGES ===== -->
+    <section id="lessons" class="lessons">
+      <div class="container">
+        <header class="section-heading">
+          <h2>Lesson Packages</h2>
+          <p>
+            A flexible range of options designed to support every stage of your
+            vocal and creative journey.
+          </p>
+        </header>
+
+        <div class="lesson-grid">
+          <!-- 30 MIN -->
+          <article class="lesson-card">
+            <h3>30-Minute Session</h3>
+            <p class="lesson-price">£25</p>
+            <p class="lesson-tag">Perfect for younger students & focused check-ins.</p>
+            <ul>
+              <li>Technique basics</li>
+              <li>Warm-ups tailored to your voice</li>
+              <li>Confidence building</li>
+              <li>Song practice or troubleshooting</li>
+            </ul>
+          </article>
+
+          <!-- 60 MIN -->
+          <article class="lesson-card">
+            <h3>60-Minute Session</h3>
+            <p class="lesson-price">£40</p>
+            <p class="lesson-tag">Full vocal coaching session.</p>
+            <ul>
+              <li>Technique, tone, range & control</li>
+              <li>Song interpretation & storytelling</li>
+              <li>Creative coaching (songwriting, expression)</li>
+              <li>Optional recording and feedback</li>
+            </ul>
+          </article>
+
+          <!-- 6 SESSION PACKAGE -->
+          <article class="lesson-card lesson-card-featured">
+            <h3>6 × 60-Minute Package</h3>
+            <p class="lesson-price">£220</p>
+            <p class="lesson-tag">
+              Structured, progressive program with consistent support.
+            </p>
+            <ul>
+              <li>Personalised lesson plan based on your goals</li>
+              <li>Weekly warm-ups & targeted technique training</li>
+              <li>Song development over time (cover or original)</li>
+              <li>Access to recordings for self-review</li>
+              <li>End-of-package reflection & next-steps plan</li>
+            </ul>
+            <p class="lesson-saving">
+              Includes a saving compared to booking single sessions.
+            </p>
+          </article>
+        </div>
+
+        <div class="lesson-extra">
+          <div>
+            <h3>What to Expect in Every Session</h3>
+            <ul>
+              <li>A warm, supportive teaching style</li>
+              <li>Exercises tailored to your voice</li>
+              <li>Clear, practical feedback</li>
+              <li>Room to explore creativity & personal expression</li>
+              <li>Techniques you can use outside the lesson</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Who I Teach</h3>
+            <ul>
+              <li>Adults & teens</li>
+              <li>Complete beginners to advanced singers</li>
+              <li>Songwriters, performers & anyone wanting to find their voice</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <header class="section-heading">
+          <h2>What My Students Say</h2>
+        </header>
+
+        <article class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img
+              src="assets/images/Ery_Profile_Pic.webp"
+              alt="Portrait of Ery, vocal student"
+            />
+          </div>
+          <div class="testimonial-content">
+            <p class="testimonial-quote-large">
+              “Sidney creates a safe, encouraging space where you're never pressured but
+              always supported.”
+            </p>
+            <div class="testimonial-body">
+              <p>
+                Working with Sidney as my vocal coach has been an absolute joy. Not only
+                is he a phenomenal singer with a brilliant ear for music, but he also
+                brings a deep sense of understanding, empathy, and fun to every session.
+              </p>
+              <p>
+                Sidney creates a safe, encouraging space where you're never pressured but
+                always supported. He listens carefully to your voice, helps you discover
+                what works for you, and celebrates your progress every step of the way.
+                His positive reinforcement is genuinely uplifting, and when there’s
+                something to improve, he approaches it with kindness and clarity:
+                “This is what we’ll work on, and we’ll get there together.”
+              </p>
+              <p>
+                He’s helped me not only with technique — like pitch matching, vocal
+                closure, and blending head and chest voice — but also with performance
+                confidence and ear training. He breaks things down in a way that’s easy
+                to understand and makes you feel capable, not self-conscious.
+              </p>
+              <p>
+                Sidney is not just a gifted vocalist and teacher — he’s also great fun to
+                be around. I’m so glad I found him, and I’m incredibly proud to be his
+                first client. I look forward to continuing our work together and can’t
+                wait to make my debut performance with his guidance behind me.
+              </p>
+            </div>
+            <p class="testimonial-meta">– Ery, 41</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="faq">
+      <div class="container">
+        <header class="section-heading">
+          <h2>FAQs</h2>
+          <p>Answers to some of the most common questions.</p>
+        </header>
+
+        <div class="faq-grid">
+          <details>
+            <summary>Do I need any experience to start lessons?</summary>
+            <p>
+              Not at all. I work with complete beginners through to advanced singers.
+              We’ll start from where you are and build from there at a pace that feels
+              comfortable and encouraging.
+            </p>
+          </details>
+
+          <details>
+            <summary>Do you teach online as well as in person?</summary>
+            <p>
+              Yes. I offer both in-person sessions in Folkestone and online lessons via
+              video call. Online lessons follow the same structure and are great if
+              you’re further away or prefer working from home.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can we work on my original songs as well as covers?</summary>
+            <p>
+              Absolutely. I love supporting songwriters. We can shape lyrics, melody and
+              structure, as well as how you deliver the song vocally and emotionally.
+            </p>
+          </details>
+
+          <details>
+            <summary>Do you help with recording and studio confidence?</summary>
+            <p>
+              Yes. I have access to professional recording equipment and we can use
+              sessions to practise studio technique, phrasing, mic control and building
+              confidence in front of the microphone.
+            </p>
+          </details>
+
+          <details>
+            <summary>How do I pay for lessons?</summary>
+            <p>
+              Payment is usually made by bank transfer in advance of each session or
+              package. Full details are provided when you book.
+            </p>
+          </details>
+
+          <details>
+            <summary>What is your cancellation policy?</summary>
+            <p>
+              I ask for at least 24 hours’ notice for cancellations or rescheduling
+              where possible. With less than 24 hours’ notice, the full fee may still be
+              payable, as it’s unlikely I’ll be able to offer the slot to another
+              student.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact">
+      <div class="container contact-inner">
+        <div class="contact-copy">
+          <h2>Book a Session</h2>
+          <p>
+            Ready to start, or want to chat about what you’re looking for?
+            Drop me a message with a bit about your voice, experience (if any),
+            and what you’d like to work on.
+          </p>
+          <p class="contact-email">
+            Email:
+            <a href="mailto:info@sidneyspong.uk">info@sidneyspong.uk</a>
+          </p>
+          <p class="contact-note">
+            I aim to reply to all enquiries within 2–3 working days.
+          </p>
+        </div>
+
+        <form
+          class="contact-form"
+          action="mailto:info@sidneyspong.uk"
+          method="post"
+          enctype="text/plain"
+        >
+          <label>
+            Name
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            What would you like to work on?
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">
+            Send enquiry
+          </button>
+          <p class="contact-smallprint">
+            This form uses your default email client to send your message.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Sidney Spong. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Simple image carousel for About section
+    const carouselImages = [
+      "assets/images/Sid_Singing_Landscape.jpg",
+      "assets/images/Sid_Singing_1.jpg",
+      "assets/images/Sid_Singing_2.jpg",
+      "assets/images/Sid_Singing_3.jpg",
+      "assets/images/Sid_Singing_4.JPG",
+      "assets/images/Sid_Singing_5.jpg" // change if file name differs
+    ];
+
+    const carouselImgEl = document.getElementById("about-carousel-image");
+    const prevBtn = document.querySelector(".carousel-control.prev");
+    const nextBtn = document.querySelector(".carousel-control.next");
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+      currentIndex = (index + carouselImages.length) % carouselImages.length;
+      carouselImgEl.src = carouselImages[currentIndex];
+    }
+
+    if (prevBtn && nextBtn && carouselImgEl) {
+      prevBtn.addEventListener("click", () => showImage(currentIndex - 1));
+      nextBtn.addEventListener("click", () => showImage(currentIndex + 1));
+
+      // optional: auto-rotate every 7 seconds
+      setInterval(() => {
+        showImage(currentIndex + 1);
+      }, 7000);
+    }
+  </script>
+</body>
+</html>
