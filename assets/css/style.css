@@ -208,19 +208,16 @@ body {
 
 .hero-graphic-left {
   position: relative;
-}
-
-.hero-graphic-left {
-  overflow: visible; /* allows the mic to extend off-screen */
+  overflow: visible; /* lets the cable go off the edge */
 }
 
 .hero-graphic-left img {
-  width: 200%;            /* makes the mic BIGGER */
-  max-width: none;        /* allow full scaling beyond default */
-  transform: translateX(-30%); /* shifts 30% of the image off-screen */
+  width: 190%;                 /* still nice and big, slightly less huge */
+  max-width: none;
+  transform: translate(-35%, -6%); 
+  /* ^ x: more left, y: a bit lower */
   filter: drop-shadow(0 18px 45px rgba(0, 0, 0, 0.7));
 }
-
 
 .hero-content {
   max-width: 560px;
