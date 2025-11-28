@@ -86,9 +86,10 @@ body {
 }
 
 .site-header .container {
-  max-width: 1180px;
-  padding-inline: 1.5rem;
+  max-width: 1180px;   /* slightly narrower so nav doesn’t touch the edges */
+  padding-inline: 1.5rem; /* a bit more left/right breathing room */
 }
+
 
 .nav-container {
   display: flex;
