@@ -71,9 +71,8 @@ body {
   background: var(--bg-light);
   color: var(--text-dark);
 }
-
 /* =====================
-   HEADER & NAV
+   HEADER & NAV (UPDATED)
    ===================== */
 
 .site-header {
@@ -83,48 +82,38 @@ body {
   background: rgba(5, 3, 34, 0.92);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(134, 122, 249, 0.4);
+  padding-block: 1rem;     /* ↑ ADJUSTED: creates a taller, stronger header */
 }
 
-/* Give the header a bit more usable width and less side padding
-   so the logo can sit further left and the nav can breathe */
 .site-header .container {
-  max-width: 1280px;     /* a bit wider than the main content */
-  padding-inline: 0.75rem;
+  max-width: 1280px;
+  padding-inline: 1rem;
 }
 
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2.5rem;           /* space between logo block and nav block */
+  gap: 2.5rem;
 }
 
-/* Brand / logo */
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  text-decoration: none;
-}
-
+/* LOGO */
 .brand-logo {
-  height: 32px;          /* slightly smaller so it sits comfortably */
+  height: 42px;            /* ↑ ADJUSTED: used to be ~32px, now taller and more substantial */
   width: auto;
   display: block;
 }
 
-/* Desktop nav */
-
+/* NAV LINKS */
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 1.4rem;           /* spacing between links */
-  font-size: 0.9rem;
+  gap: 1.6rem;             /* a bit more breathing room */
+  font-size: 0.95rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 500;
-  white-space: nowrap;   /* keep everything on one line on desktop */
+  white-space: nowrap;
 }
 
 .main-nav a {
@@ -137,14 +126,13 @@ body {
 }
 
 .main-nav .nav-cta {
-  padding: 0.4rem 1rem;
+  padding: 0.45rem 1.1rem;
   border-radius: 999px;
   border: 1px solid rgba(82, 255, 255, 0.5);
   color: var(--accent-cyan);
 }
 
-/* Mobile nav toggle */
-
+/* MOBILE */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -165,7 +153,7 @@ body {
   .main-nav {
     position: fixed;
     inset: 0 0 auto;
-    top: 56px;
+    top: calc(56px + 1rem); /* accounts for taller header */
     padding: 1.25rem 1.5rem 1.75rem;
     flex-direction: column;
     align-items: flex-start;
@@ -173,7 +161,7 @@ body {
     background: rgba(5, 3, 34, 0.98);
     transform: translateY(-140%);
     transition: transform 0.25s ease;
-    white-space: normal;  /* allow wrapping inside mobile menu */
+    white-space: normal;
   }
 
   .main-nav.open {
@@ -192,7 +180,6 @@ body {
     transform: translateY(-3.5px) rotate(-45deg);
   }
 }
-
 
 /* =====================
    HERO
