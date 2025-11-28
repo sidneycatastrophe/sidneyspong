@@ -71,8 +71,8 @@ body {
   background: var(--bg-light);
   color: var(--text-dark);
 }
-x/* =====================
-   HEADER & NAV (TUNED)
+/* =====================
+   HEADER & NAV (UPDATED)
    ===================== */
 
 .site-header {
@@ -82,26 +82,24 @@ x/* =====================
   background: rgba(5, 3, 34, 0.92);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(134, 122, 249, 0.4);
-  padding-block: 1rem;        /* keeps the nice tall header */
+  padding-block: 1rem;
 }
 
-/* Slightly narrower + more inner padding
-   so content sits comfortably inside the viewport */
 .site-header .container {
-  max-width: 1180px;          /* was 1280 – pulls nav in from the edges */
-  padding-inline: 1.5rem;     /* more space left & right inside header */
+  max-width: 1180px;
+  padding-inline: 1.5rem;
 }
 
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;                  /* space between logo block and nav block */
+  gap: 2.5rem;
 }
 
 /* LOGO */
 .brand-logo {
-  height: 42px;               /* same nice substantial size */
+  height: 42px;
   width: auto;
   display: block;
 }
@@ -110,12 +108,12 @@ x/* =====================
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 1.4rem;                /* slightly tighter than before */
-  font-size: 0.92rem;         /* a hair smaller so everything fits easily */
-  letter-spacing: 0.05em;
+  gap: 1.6rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 500;
-  white-space: nowrap;        /* keep on one line on desktop */
+  white-space: nowrap;
 }
 
 .main-nav a {
@@ -155,7 +153,7 @@ x/* =====================
   .main-nav {
     position: fixed;
     inset: 0 0 auto;
-    top: calc(56px + 1rem);   /* matches taller header */
+    top: calc(56px + 1rem);
     padding: 1.25rem 1.5rem 1.75rem;
     flex-direction: column;
     align-items: flex-start;
