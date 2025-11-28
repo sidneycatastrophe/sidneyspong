@@ -1,0 +1,21 @@
+/* Parallax & sizing tweaks for hero banner image
+   You can append this to assets/css/style.css instead of adding a new file */
+
+/* Make the image a bit larger and ensure no gaps when it translates */
+.hero-banner {
+  overflow: hidden; /* already set, but be sure */
+}
+
+/* Increase max height slightly so image has room to move.
+   Adjust clamp values for desired visual height. */
+.hero-banner-image {
+  will-change: transform;
+  transform: translateY(0) scale(1.08); /* match SCALE in JS */
+  /* Taller on large viewports so parallax has room */
+  height: clamp(340px, 56vw, 680px);
+  object-fit: cover;
+  object-position: center right;
+  display: block;
+}
+
+/* Optional: If you want an even bigger 'zoom' effect, increase scale here and in JS */
