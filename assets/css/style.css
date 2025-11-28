@@ -85,20 +85,22 @@ body {
   border-bottom: 1px solid rgba(134, 122, 249, 0.4);
 }
 
-/* Give the header a bit more horizontal space than other sections */
+/* Give the header a bit more usable width and less side padding
+   so the logo can sit further left and the nav can breathe */
 .site-header .container {
-  max-width: 1200px;      /* slightly wider than the default 1120px */
-  padding-inline: 1rem;   /* less padding at the sides = more usable width */
+  max-width: 1280px;     /* a bit wider than the main content */
+  padding-inline: 0.75rem;
 }
 
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: 0.7rem;  /* roughly same height as before */
+  gap: 2.5rem;           /* space between logo block and nav block */
 }
 
 /* Brand / logo */
+
 .brand {
   display: flex;
   align-items: center;
@@ -107,26 +109,27 @@ body {
 }
 
 .brand-logo {
-  height: 34px;           /* slightly smaller than your original 40px */
+  height: 32px;          /* slightly smaller so it sits comfortably */
   width: auto;
   display: block;
 }
 
 /* Desktop nav */
+
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 1rem;              /* tighter gap to save space */
-  font-size: 0.9rem;      /* a bit smaller text */
-  white-space: nowrap;    /* try to keep everything on one line */
+  gap: 1.4rem;           /* spacing between links */
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+  white-space: nowrap;   /* keep everything on one line on desktop */
 }
 
 .main-nav a {
   color: var(--text-muted);
   text-decoration: none;
-  letter-spacing: 0.08em;  /* slightly less spread-out than before */
-  text-transform: uppercase;
-  font-weight: 500;
 }
 
 .main-nav a:hover {
@@ -134,7 +137,7 @@ body {
 }
 
 .main-nav .nav-cta {
-  padding: 0.4rem 0.9rem;  /* a touch smaller so it fits better on one line */
+  padding: 0.4rem 1rem;
   border-radius: 999px;
   border: 1px solid rgba(82, 255, 255, 0.5);
   color: var(--accent-cyan);
@@ -170,7 +173,7 @@ body {
     background: rgba(5, 3, 34, 0.98);
     transform: translateY(-140%);
     transition: transform 0.25s ease;
-    white-space: normal;    /* allow wrapping in the mobile menu */
+    white-space: normal;  /* allow wrapping inside mobile menu */
   }
 
   .main-nav.open {
@@ -189,6 +192,7 @@ body {
     transform: translateY(-3.5px) rotate(-45deg);
   }
 }
+
 
 /* =====================
    HERO
