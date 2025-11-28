@@ -71,8 +71,8 @@ body {
   background: var(--bg-light);
   color: var(--text-dark);
 }
-/* =====================
-   HEADER & NAV (UPDATED)
+x/* =====================
+   HEADER & NAV (TUNED)
    ===================== */
 
 .site-header {
@@ -82,24 +82,26 @@ body {
   background: rgba(5, 3, 34, 0.92);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(134, 122, 249, 0.4);
-  padding-block: 1rem;     /* ↑ ADJUSTED: creates a taller, stronger header */
+  padding-block: 1rem;        /* keeps the nice tall header */
 }
 
+/* Slightly narrower + more inner padding
+   so content sits comfortably inside the viewport */
 .site-header .container {
-  max-width: 1280px;
-  padding-inline: 1rem;
+  max-width: 1180px;          /* was 1280 – pulls nav in from the edges */
+  padding-inline: 1.5rem;     /* more space left & right inside header */
 }
 
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2.5rem;
+  gap: 2rem;                  /* space between logo block and nav block */
 }
 
 /* LOGO */
 .brand-logo {
-  height: 42px;            /* ↑ ADJUSTED: used to be ~32px, now taller and more substantial */
+  height: 42px;               /* same nice substantial size */
   width: auto;
   display: block;
 }
@@ -108,12 +110,12 @@ body {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 1.6rem;             /* a bit more breathing room */
-  font-size: 0.95rem;
-  letter-spacing: 0.06em;
+  gap: 1.4rem;                /* slightly tighter than before */
+  font-size: 0.92rem;         /* a hair smaller so everything fits easily */
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: 500;
-  white-space: nowrap;
+  white-space: nowrap;        /* keep on one line on desktop */
 }
 
 .main-nav a {
@@ -153,7 +155,7 @@ body {
   .main-nav {
     position: fixed;
     inset: 0 0 auto;
-    top: calc(56px + 1rem); /* accounts for taller header */
+    top: calc(56px + 1rem);   /* matches taller header */
     padding: 1.25rem 1.5rem 1.75rem;
     flex-direction: column;
     align-items: flex-start;
