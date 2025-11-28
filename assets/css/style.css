@@ -23,6 +23,9 @@
   --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.45);
   --shadow-neon: 0 0 0 1px rgba(134, 122, 249, 0.4),
     0 0 24px rgba(134, 122, 249, 0.9);
+
+  /* Header/nav sizing token for more robust mobile calcs */
+  --header-offset: calc(56px + 1rem);
 }
 
 *,
@@ -38,12 +41,24 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Keyboard focus visibility for accessibility */
+:focus { outline: none; }
+:focus-visible {
+  outline: 3px solid rgba(82, 255, 255, 0.14);
+  outline-offset: 2px;
+}
+
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Segoe UI", sans-serif;
   background: radial-gradient(circle at top, #2c2382 0, #050322 48%, #020010 100%);
   color: var(--text-main);
   line-height: 1.6;
+}
+
+/* Utility to lock scrolling when mobile nav is open via JS */
+body.no-scroll {
+  overflow: hidden;
 }
 
 /* Containers & sections */
@@ -122,6 +137,12 @@ body {
   text-decoration: none;
 }
 
+/* Make links focus-visible for keyboard users */
+.main-nav a:focus-visible {
+  outline: 3px solid rgba(82,255,255,0.12);
+  outline-offset: 2px;
+}
+
 .main-nav a:hover {
   color: var(--accent-cyan);
 }
@@ -148,13 +169,14 @@ body {
   height: 2px;
   background: var(--text-main);
   border-radius: 999px;
+  transition: transform 0.22s ease, opacity 0.18s ease; /* smooth burger → X */
 }
 
 @media (max-width: 768px) {
   .main-nav {
     position: fixed;
     inset: 0 0 auto;
-    top: calc(56px + 1rem); /* accounts for taller header */
+    top: var(--header-offset); /* uses variable so header size changes are safer */
     padding: 1.25rem 1.5rem 1.75rem;
     flex-direction: column;
     align-items: flex-start;
@@ -165,6 +187,7 @@ body {
     white-space: normal;
   }
 
+  /* when opened via JS toggle, either add .open or set aria-expanded on button */
   .main-nav.open {
     transform: translateY(0);
   }
@@ -178,6 +201,14 @@ body {
   }
 
   .nav-toggle.open span:nth-child(2) {
+    transform: translateY(-3.5px) rotate(-45deg);
+  }
+
+  /* support aria-expanded state for accessibility-friendly JS */
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(3.5px) rotate(45deg);
+  }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) {
     transform: translateY(-3.5px) rotate(-45deg);
   }
 }
@@ -274,6 +305,12 @@ body {
   text-decoration: none;
   cursor: pointer;
   border: none;
+}
+
+/* Ensure buttons show clear focus */
+.btn:focus-visible {
+  outline: 3px solid rgba(82,255,255,0.14);
+  outline-offset: 2px;
 }
 
 .btn.primary {
@@ -425,6 +462,11 @@ h2 {
   background: transparent;
   color: var(--text-main);
   cursor: pointer;
+}
+
+.carousel-btn:focus-visible {
+  outline: 3px solid rgba(82,255,255,0.12);
+  outline-offset: 2px;
 }
 
 .carousel-dots {
@@ -696,6 +738,13 @@ h2 {
   resize: vertical;
 }
 
+/* Provide clearer focus state for form fields */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 0 4px rgba(82,255,255,0.08);
+  border-color: rgba(82,255,255,0.6);
+}
+
 /* =====================
    FOOTER
    ===================== */
@@ -779,5 +828,20 @@ h2 {
   .packages-footer {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/* Respect users' motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    will-change: auto !important;
+  }
+  .hero-banner-image,
+  .carousel-slide,
+  .nav-toggle span,
+  .main-nav {
+    transform: none !important;
   }
 }
