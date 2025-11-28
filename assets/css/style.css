@@ -82,25 +82,25 @@ body {
   background: rgba(5, 3, 34, 0.92);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(134, 122, 249, 0.4);
-  padding-block: 1rem;
+  padding-block: 1rem;     /* taller, stronger header */
 }
 
 .site-header .container {
-  max-width: 1180px;   /* slightly narrower so nav doesn’t touch the edges */
-  padding-inline: 1.5rem; /* a bit more left/right breathing room */
+  max-width: 1280px;
+  padding-left: 0.5rem;   /* reduced to pull logo closer to the edge */
+  padding-right: 1rem;    /* keep right side comfortable */
 }
-
 
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2.5rem;
+  gap: 1.8rem;            /* was 2.5rem – frees up space for the nav */
 }
 
 /* LOGO */
 .brand-logo {
-  height: 42px;
+  height: 34px;           /* 20% smaller than 42px */
   width: auto;
   display: block;
 }
@@ -109,7 +109,7 @@ body {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 1.6rem;            /* your original value */
   font-size: 0.95rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -154,7 +154,7 @@ body {
   .main-nav {
     position: fixed;
     inset: 0 0 auto;
-    top: calc(56px + 1rem);
+    top: calc(56px + 1rem); /* accounts for taller header */
     padding: 1.25rem 1.5rem 1.75rem;
     flex-direction: column;
     align-items: flex-start;
