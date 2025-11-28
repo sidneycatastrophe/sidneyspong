@@ -85,37 +85,46 @@ body {
   border-bottom: 1px solid rgba(134, 122, 249, 0.4);
 }
 
+/* Give the header a bit more horizontal space than other sections */
+.site-header .container {
+  max-width: 1200px;      /* slightly wider than the default 1120px */
+  padding-inline: 1rem;   /* less padding at the sides = more usable width */
+}
+
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: 0.75rem;
+  padding-block: 0.7rem;  /* roughly same height as before */
 }
 
+/* Brand / logo */
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   text-decoration: none;
 }
 
 .brand-logo {
-  height: 40px;
+  height: 34px;           /* slightly smaller than your original 40px */
   width: auto;
   display: block;
 }
 
+/* Desktop nav */
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  font-size: 0.95rem;
+  gap: 1rem;              /* tighter gap to save space */
+  font-size: 0.9rem;      /* a bit smaller text */
+  white-space: nowrap;    /* try to keep everything on one line */
 }
 
 .main-nav a {
   color: var(--text-muted);
   text-decoration: none;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.08em;  /* slightly less spread-out than before */
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -125,7 +134,7 @@ body {
 }
 
 .main-nav .nav-cta {
-  padding: 0.45rem 0.9rem;
+  padding: 0.4rem 0.9rem;  /* a touch smaller so it fits better on one line */
   border-radius: 999px;
   border: 1px solid rgba(82, 255, 255, 0.5);
   color: var(--accent-cyan);
@@ -161,6 +170,7 @@ body {
     background: rgba(5, 3, 34, 0.98);
     transform: translateY(-140%);
     transition: transform 0.25s ease;
+    white-space: normal;    /* allow wrapping in the mobile menu */
   }
 
   .main-nav.open {
