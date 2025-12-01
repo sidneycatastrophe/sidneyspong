@@ -345,13 +345,15 @@ body.no-scroll {
   border: 1px solid rgba(134, 122, 249, 0.6);
 }
 
-/* HERO BANNER (PARALLAX + CAPTION TWEAKS) */
+/* =====================
+   HERO BANNER (NO PARALLAX)
+   ===================== */
 
 .hero-banner {
   background: var(--banner-bg, #050322);
-  padding-bottom: 0;             /* caption spacing handled below */
+  padding-bottom: 0;
   position: relative;
-  overflow: hidden;              /* needed for parallax movement */
+  overflow: hidden;
 }
 
 .hero-banner-inner {
@@ -359,29 +361,26 @@ body.no-scroll {
   overflow: hidden;
 }
 
-/* Parallax-friendly image */
+/* Correct cropped banner image */
 .hero-banner-image {
   width: 100%;
-  height: clamp(210px, 38vw, 380px);  /* smaller max height than before */
+  height: clamp(260px, 50vw, 520px);  /* THIS IS THE GOOD VERSION */
   object-fit: cover;
-  object-position: center right;      /* favour your face */
+  object-position: center right;
   display: block;
-  will-change: transform;
-  transform: translateY(0);
 }
 
-/* Avoid extra padding from the generic .container around the caption row */
+/* Caption row fixing */
 .hero-banner > .container {
   padding-top: 0;
   padding-bottom: 0;
 }
 
-/* Caption under the banner image */
 .hero-banner-caption {
-  margin: 0;                            /* remove default <p> margins */
-  padding: 0.9rem 1.25rem 1.2rem;       /* top / sides / bottom */
+  margin: 0;
+  padding: 1.0rem 1.25rem;
   text-align: center;
-  color: var(--caption-color, #dcd9f2); /* falls back to your light text */
+  color: var(--caption-color, #dcd9f2);
   font-size: 1.05rem;
   line-height: 1.4;
   max-width: 1100px;
@@ -389,14 +388,12 @@ body.no-scroll {
   margin-right: auto;
 }
 
-/* Slightly larger vertical padding + type size on larger screens */
 @media (min-width: 900px) {
   .hero-banner-caption {
-    padding: 1.1rem 1.25rem 1.4rem;
+    padding: 1.25rem 1.25rem;
     font-size: 1.125rem;
   }
 }
-
 /* =====================
    SHARED SECTION STYLES
    ===================== */
