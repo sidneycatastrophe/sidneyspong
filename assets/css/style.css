@@ -349,12 +349,12 @@ body.no-scroll {
    HERO BANNER (PARALLAX + CAPTION TWEAKS)
    ===================== */
 
-/* Mobile / default: static image */
+/* Mobile / default: static cropped strip */
 .hero-banner {
   background: var(--banner-bg, #050322);
-  padding-bottom: 0;
+  padding-bottom: 0;        /* spacing handled by caption */
   position: relative;
-  overflow: hidden;
+  overflow: hidden;         /* needed for crop + parallax */
 }
 
 .hero-banner-inner {
@@ -364,14 +364,14 @@ body.no-scroll {
   overflow: hidden;
 }
 
-/* Default: no parallax on small screens */
+/* Default (incl. mobile): cropped strip, no parallax */
 .hero-banner-image {
   display: block;
   width: 100%;
-  height: auto;                 /* natural aspect ratio */
+  height: clamp(260px, 45vw, 420px);  /* CROPPED “film strip” height */
   object-fit: cover;
-  object-position: center right;
-  transform: none;              /* no movement on mobile */
+  object-position: center right;      /* favour your face */
+  transform: none;                    /* no movement on mobile */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
@@ -379,32 +379,31 @@ body.no-scroll {
 /* Caption under the banner image */
 .hero-banner > .container {
   padding-top: 0;
-  padding-bottom: 0;
+  padding-bottom: 0;        /* avoid double bands */
 }
 
 .hero-banner-caption {
-  margin: 0;                            /* remove default <p> margins */
-  padding: 0.9rem 1.25rem 1.2rem;       /* top / sides / bottom */
+  margin: 0;                             /* remove default <p> margins */
+  padding: 0.75rem 1.25rem 0.85rem;      /* tighter band: top / sides / bottom */
   text-align: center;
   color: var(--caption-color, #dcd9f2);
-  font-size: 1.05rem;
-  line-height: 1.4;
-  max-width: 1100px;
+  font-size: 1rem;
+  line-height: 1.35;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Desktop-only enhancements: give image extra height + parallax hints */
+/* Desktop-only enhancements: parallax hints + slightly larger caption */
 @media (min-width: 900px) {
   .hero-banner-image {
-    min-height: 420px;          /* room to move vertically */
-    will-change: transform;
-    transform: translate3d(0,0,0);
+    will-change: transform;             /* parallax.js will move this */
+    transform: translate3d(0, 0, 0);
   }
 
   .hero-banner-caption {
-    padding: 1.1rem 1.25rem 1.4rem;
-    font-size: 1.125rem;
+    padding: 0.9rem 1.25rem 1rem;
+    font-size: 1.05rem;
   }
 }
 
