@@ -345,43 +345,48 @@ body.no-scroll {
   border: 1px solid rgba(134, 122, 249, 0.6);
 }
 
-/* HERO BANNER (PARALLAX + CAPTION TWEAKS) */
+/* =====================
+   HERO BANNER (PARALLAX + CAPTION TWEAKS)
+   ===================== */
 
+/* Mobile / default: static image */
 .hero-banner {
   background: var(--banner-bg, #050322);
-  padding-bottom: 0;             /* caption spacing handled below */
+  padding-bottom: 0;
   position: relative;
-  overflow: hidden;              /* needed for parallax movement */
-}
-
-.hero-banner-inner {
-  max-width: 100%;
   overflow: hidden;
 }
 
-/* Parallax-friendly image */
-.hero-banner-image {
+.hero-banner-inner {
+  position: relative;
   width: 100%;
-  height: clamp(210px, 38vw, 380px);  /* smaller max height than before */
-  object-fit: cover;
-  object-position: center right;      /* favour your face */
-  display: block;
-  will-change: transform;
-  transform: translateY(0);
+  height: 100%;
+  overflow: hidden;
 }
 
-/* Avoid extra padding from the generic .container around the caption row */
+/* Default: no parallax on small screens */
+.hero-banner-image {
+  display: block;
+  width: 100%;
+  height: auto;                 /* natural aspect ratio */
+  object-fit: cover;
+  object-position: center right;
+  transform: none;              /* no movement on mobile */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Caption under the banner image */
 .hero-banner > .container {
   padding-top: 0;
   padding-bottom: 0;
 }
 
-/* Caption under the banner image */
 .hero-banner-caption {
   margin: 0;                            /* remove default <p> margins */
   padding: 0.9rem 1.25rem 1.2rem;       /* top / sides / bottom */
   text-align: center;
-  color: var(--caption-color, #dcd9f2); /* falls back to your light text */
+  color: var(--caption-color, #dcd9f2);
   font-size: 1.05rem;
   line-height: 1.4;
   max-width: 1100px;
@@ -389,8 +394,14 @@ body.no-scroll {
   margin-right: auto;
 }
 
-/* Slightly larger vertical padding + type size on larger screens */
+/* Desktop-only enhancements: give image extra height + parallax hints */
 @media (min-width: 900px) {
+  .hero-banner-image {
+    min-height: 420px;          /* room to move vertically */
+    will-change: transform;
+    transform: translate3d(0,0,0);
+  }
+
   .hero-banner-caption {
     padding: 1.1rem 1.25rem 1.4rem;
     font-size: 1.125rem;
