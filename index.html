@@ -539,102 +539,113 @@
     </div>
   </footer>
 
-  <!-- =============== JS: NAV + CAROUSEL =============== -->
-  <script>
-    // Safe query helper
-    const $ = (sel, ctx = document) => ctx.querySelector(sel);
+<!-- =============== JS: NAV + CAROUSEL =============== -->
+<script>
+  // Safe query helper
+  const $ = (sel, ctx = document) => ctx.querySelector(sel);
 
-    // Mobile nav toggle
-    (function setupNav() {
-      const navToggle = $(".nav-toggle");
-      const nav = $(".main-nav");
-      if (!navToggle || !nav) return;
-      navToggle.addEventListener("click", () => {
-        const open = nav.classList.toggle("open");
-        navToggle.classList.toggle("open", open);
-        navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-      });
-    })();
-      // Set a target height so images are tall and consistent,
-      // but don't create huge dead space on mobile.
-      function setCarouselHeight() {
-        const w = window.innerWidth;
-        const vh = window.innerHeight;
+  // Mobile nav toggle
+  (function setupNav() {
+    const navToggle = $(".nav-toggle");
+    const nav = $(".main-nav");
+    if (!navToggle || !nav) return;
 
-        // Desktop/tablet: keep your taller look
-        if (w >= 768) {
-          const max = 800; // px cap; adjust to taste
-          const height = Math.min(Math.round(vh * 0.60), max);
-          carouselWindow.style.height = height + "px";
-          return;
-        }
+    navToggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      navToggle.classList.toggle("open", open);
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  })();
 
-        // Mobile: shorter so arrows/dots sit near the image (no massive gap)
-        const min = 260;
-        const max = 420;
-        const height = Math.max(min, Math.min(Math.round(vh * 0.38), max));
+  // Carousel: show/hide slides and keep container tall
+  (function setupCarousel() {
+    const carouselWindow = document.querySelector(".carousel-window");
+    const slides = Array.from(document.querySelectorAll(".carousel-slide"));
+    const dots = Array.from(document.querySelectorAll(".carousel-dots .dot"));
+    const prevBtn = document.querySelector(".carousel-btn.prev");
+    const nextBtn = document.querySelector(".carousel-btn.next");
+    if (!carouselWindow || !slides.length) return;
+
+    // Set a target height so images are tall and consistent,
+    // but don't create huge dead space on mobile.
+    function setCarouselHeight() {
+      const w = window.innerWidth;
+      const vh = window.innerHeight;
+
+      // Desktop/tablet: keep your taller look
+      if (w >= 768) {
+        const max = 800; // px cap; adjust to taste
+        const height = Math.min(Math.round(vh * 0.60), max);
         carouselWindow.style.height = height + "px";
+        return;
       }
 
-      // Recalc height when images load
-      const imgs = Array.from(carouselWindow.querySelectorAll("img"));
-      imgs.forEach((img) => {
-        if (!img.complete) img.addEventListener("load", setCarouselHeight);
+      // Mobile: shorter so arrows/dots sit near the image (no massive gap)
+      const min = 260;
+      const max = 420;
+      const height = Math.max(min, Math.min(Math.round(vh * 0.38), max));
+      carouselWindow.style.height = height + "px";
+    }
+
+    // Recalc height when images load
+    const imgs = Array.from(carouselWindow.querySelectorAll("img"));
+    imgs.forEach((img) => {
+      if (!img.complete) img.addEventListener("load", setCarouselHeight);
+    });
+
+    // Initial size and on resize
+    setCarouselHeight();
+    window.addEventListener("resize", setCarouselHeight);
+
+    let currentIndex = slides.findIndex((s) => s.classList.contains("active"));
+    if (currentIndex < 0) currentIndex = 0;
+
+    function showSlide(index) {
+      currentIndex = (index + slides.length) % slides.length;
+      slides.forEach((s, i) => s.classList.toggle("active", i === currentIndex));
+      dots.forEach((d, i) => {
+        d.classList.toggle("active", i === currentIndex);
+        d.setAttribute("aria-selected", i === currentIndex ? "true" : "false");
       });
+    }
 
-      // Initial size and on resize
-      setCarouselHeight();
-      window.addEventListener("resize", setCarouselHeight);
+    if (prevBtn) prevBtn.addEventListener("click", () => showSlide(currentIndex - 1));
+    if (nextBtn) nextBtn.addEventListener("click", () => showSlide(currentIndex + 1));
+    dots.forEach((dot, i) => dot.addEventListener("click", () => showSlide(i)));
 
-      let currentIndex = slides.findIndex((s) => s.classList.contains("active"));
-      if (currentIndex < 0) currentIndex = 0;
+    // keyboard support for the carousel-track
+    const track = document.querySelector(".carousel-track");
+    if (track) {
+      track.setAttribute("tabindex", "0");
+      track.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") showSlide(currentIndex - 1);
+        if (e.key === "ArrowRight") showSlide(currentIndex + 1);
+      });
+    }
 
-      function showSlide(index) {
-        currentIndex = (index + slides.length) % slides.length;
-        slides.forEach((s, i) => s.classList.toggle("active", i === currentIndex));
-        dots.forEach((d, i) => {
-          d.classList.toggle("active", i === currentIndex);
-          d.setAttribute("aria-selected", i === currentIndex ? "true" : "false");
-        });
-      }
+    // autoplay with pause on hover/focus
+    let interval = setInterval(() => showSlide(currentIndex + 1), 6000);
+    const root = document.querySelector(".photo-carousel");
+    if (root) {
+      const pause = () => clearInterval(interval);
+      const resume = () => {
+        clearInterval(interval);
+        interval = setInterval(() => showSlide(currentIndex + 1), 6000);
+      };
 
-      if (prevBtn) prevBtn.addEventListener("click", () => showSlide(currentIndex - 1));
-      if (nextBtn) nextBtn.addEventListener("click", () => showSlide(currentIndex + 1));
-      dots.forEach((dot, i) => dot.addEventListener("click", () => showSlide(i)));
+      root.addEventListener("mouseenter", pause);
+      root.addEventListener("focusin", pause);
+      root.addEventListener("mouseleave", resume);
+      root.addEventListener("focusout", resume);
+    }
+  })();
 
-      // keyboard support for the carousel-track
-      const track = document.querySelector(".carousel-track");
-      if (track) {
-        track.setAttribute("tabindex", "0");
-        track.addEventListener("keydown", (e) => {
-          if (e.key === "ArrowLeft") showSlide(currentIndex - 1);
-          if (e.key === "ArrowRight") showSlide(currentIndex + 1);
-        });
-      }
-
-      // autoplay with pause on hover/focus
-      let interval = setInterval(() => showSlide(currentIndex + 1), 6000);
-      const root = document.querySelector(".photo-carousel");
-      if (root) {
-        root.addEventListener("mouseenter", () => clearInterval(interval));
-        root.addEventListener("focusin", () => clearInterval(interval));
-        root.addEventListener("mouseleave", () => {
-          clearInterval(interval);
-          interval = setInterval(() => showSlide(currentIndex + 1), 6000);
-        });
-        root.addEventListener("focusout", () => {
-          clearInterval(interval);
-          interval = setInterval(() => showSlide(currentIndex + 1), 6000);
-        });
-      }
-    })();
-
-    // Footer year
-    (function setYear() {
-      const yearSpan = document.getElementById("year");
-      if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-    })();
-  </script>
-  <script src="assets/js/parallax.js"></script>
+  // Footer year
+  (function setYear() {
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+  })();
+</script>
+<script src="assets/js/parallax.js"></script>
 </body>
 </html>
