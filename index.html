@@ -555,36 +555,38 @@
         navToggle.setAttribute("aria-expanded", open ? "true" : "false");
       });
     })();
-
-    // Carousel: show/hide slides and keep container tall
-    (function setupCarousel() {
-      const carouselWindow = document.querySelector(".carousel-window");
-      const slides = Array.from(document.querySelectorAll(".carousel-slide"));
-      const dots = Array.from(document.querySelectorAll(".carousel-dots .dot"));
-      const prevBtn = document.querySelector(".carousel-btn.prev");
-      const nextBtn = document.querySelector(".carousel-btn.next");
-      if (!carouselWindow || !slides.length) return;
-
-      // Set a target height (60vh up to a max) so images are tall and consistent
+      // Set a target height so images are tall and consistent,
+      // but don't create huge dead space on mobile.
       function setCarouselHeight() {
-        const max = 800; // px cap; adjust to taste
-        const height = Math.min(Math.round(window.innerHeight * 0.60), max);
+        const w = window.innerWidth;
+        const vh = window.innerHeight;
+
+        // Desktop/tablet: keep your taller look
+        if (w >= 768) {
+          const max = 800; // px cap; adjust to taste
+          const height = Math.min(Math.round(vh * 0.60), max);
+          carouselWindow.style.height = height + "px";
+          return;
+        }
+
+        // Mobile: shorter so arrows/dots sit near the image (no massive gap)
+        const min = 260;
+        const max = 420;
+        const height = Math.max(min, Math.min(Math.round(vh * 0.38), max));
         carouselWindow.style.height = height + "px";
       }
 
       // Recalc height when images load
       const imgs = Array.from(carouselWindow.querySelectorAll("img"));
-      imgs.forEach(img => {
-        if (!img.complete) {
-          img.addEventListener("load", setCarouselHeight);
-        }
+      imgs.forEach((img) => {
+        if (!img.complete) img.addEventListener("load", setCarouselHeight);
       });
 
       // Initial size and on resize
       setCarouselHeight();
       window.addEventListener("resize", setCarouselHeight);
 
-      let currentIndex = slides.findIndex(s => s.classList.contains("active"));
+      let currentIndex = slides.findIndex((s) => s.classList.contains("active"));
       if (currentIndex < 0) currentIndex = 0;
 
       function showSlide(index) {
