@@ -149,6 +149,27 @@
     Array.prototype.forEach.call(lessonItems, function (li) { lessonObserver.observe(li); });
   }
 
+  /* ---------- Lessons on phones: "01 / 06" counter + progress line while swiping ---------- */
+  var lessonRail = document.querySelector(".lesson-list");
+  var countEl = document.querySelector("[data-lesson-count]");
+  var progressEl = document.querySelector("[data-lesson-progress]");
+  if (lessonRail && countEl && progressEl) {
+    var total = lessonRail.children.length;
+    var ticking = false;
+    lessonRail.addEventListener("scroll", function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        var max = lessonRail.scrollWidth - lessonRail.clientWidth;
+        var ratio = max > 0 ? lessonRail.scrollLeft / max : 0;
+        var index = Math.min(total, Math.round(ratio * (total - 1)) + 1);
+        countEl.textContent = (index < 10 ? "0" : "") + index;
+        progressEl.style.transform = "scaleX(" + Math.max(1 / total, ratio) + ")";
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
   /* ---------- Video: load YouTube only when someone presses play ---------- */
   document.querySelectorAll("[data-video]").forEach(function (box) {
     var btn = box.querySelector(".video-play");

@@ -369,7 +369,7 @@ h3 { font-size: 1.25rem; letter-spacing: -0.02em; line-height: 1.25; font-weight
   background: var(--paper-2);
   box-shadow: 0 40px 80px -48px rgba(22, 23, 26, 0.45);
 }
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 72%; }
 
 .hero-note {
   position: absolute;
@@ -430,7 +430,7 @@ html:not(.js) .mic .mic-cable { stroke-dashoffset: 0; }
   .hero-title .line { white-space: nowrap; }
   .hero-visual { padding-top: 40px; }
   .hero-photo { aspect-ratio: 4 / 5; }
-  .mic { left: -26%; bottom: 4%; width: 230px; }
+  .mic { left: -30%; bottom: -10%; width: clamp(170px, 15vw, 220px); }
   .hero-note { right: 10%; }
 }
 
@@ -554,7 +554,12 @@ html:not(.js) .mic .mic-cable { stroke-dashoffset: 0; }
 .lesson-photo img { width: 100%; height: 100%; object-fit: cover; }
 .lesson-list li[data-lesson="1"] .lesson-photo img { object-position: 50% 25%; }
 .lesson-stage { display: none; }
-.swipe-note { margin-top: 20px; font-size: 1.35rem; transform: rotate(-3deg); transform-origin: left; }
+.swipe-meta { display: flex; align-items: baseline; justify-content: space-between; margin-top: 22px; }
+.swipe-meta .hand-note { font-size: 1.35rem; transform: rotate(-3deg); transform-origin: left; }
+.lesson-count { font-size: 0.9375rem; font-weight: 560; color: var(--mute); font-variant-numeric: tabular-nums; }
+.lesson-count [data-lesson-count] { color: var(--ink); }
+.lesson-progress { height: 3px; margin-top: 8px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.lesson-progress span { display: block; height: 100%; width: 100%; border-radius: 3px; background: var(--crayon); transform: scaleX(0.1667); transform-origin: left; transition: transform 0.25s var(--ease-out); }
 
 @media (max-width: 959px) {
   .lesson-list {
@@ -612,7 +617,7 @@ html:not(.js) .mic .mic-cable { stroke-dashoffset: 0; }
   }
   .lesson-stage img[data-for="1"] { object-position: 50% 25%; }
   .lesson-stage img.is-active { opacity: 1; transform: none; }
-  .swipe-note { display: none; }
+  .swipe-meta, .lesson-progress { display: none; }
   .lesson-list li { gap: 40px; padding-block: 40px; min-height: min(32vh, 290px); align-content: center; }
   .js .lesson-list li > :not(.lesson-photo) { transition: opacity 0.5s var(--ease-out); }
   .js .lesson-list li:not(.is-active) > :not(.lesson-photo) { opacity: 0.5; }
@@ -742,6 +747,7 @@ html:not(.js) .mic .mic-cable { stroke-dashoffset: 0; }
 }
 .scribble-arrow-small { position: absolute; left: -40px; top: 6px; width: 38px; height: 28px; }
 .scribble-arrow-small path { stroke-width: 4; }
+.prices-cta { margin-top: 32px; }
 .price-points { display: grid; gap: 6px; margin: 14px 0 0; padding: 0; list-style: none; font-size: 0.9375rem; color: var(--ink-2); }
 .price-points li { display: flex; gap: 10px; }
 .price-points li::before { content: ""; flex: none; width: 10px; height: 2px; margin-top: 0.75em; border-radius: 2px; background: var(--crayon); }
@@ -784,6 +790,15 @@ html:not(.js) .mic .mic-cable { stroke-dashoffset: 0; }
   font-family: var(--font-hand);
   font-size: 1.6rem;
   line-height: 1;
+}
+.review mark {
+  padding: 0 0.1em;
+  border-radius: 3px;
+  background: linear-gradient(transparent 55%, rgba(39, 71, 208, 0.16) 55%);
+  color: inherit;
+  font-weight: 560;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 .review-more { margin-top: 18px; }
 .review-more summary {
@@ -843,6 +858,22 @@ html:not(.js) .mic .mic-cable { stroke-dashoffset: 0; }
 .copy-btn:hover { background: #fff; color: var(--ink); }
 .copy-btn:active { transform: scale(0.96); }
 .contact-note { display: none; }
+.steps { display: grid; gap: 14px; margin: 28px 0 0; padding: 0; list-style: none; counter-reset: step; }
+.steps li { display: grid; grid-template-columns: auto 1fr; column-gap: 14px; counter-increment: step; }
+.steps li::before {
+  content: counter(step);
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 32px; height: 32px;
+  border-radius: 999px;
+  background: var(--crayon-soft);
+  color: var(--crayon);
+  font-weight: 620;
+  font-size: 0.9375rem;
+}
+.steps strong { font-weight: 600; line-height: 1.35; padding-top: 4px; }
+.steps span { color: var(--ink-2); font-size: 0.9375rem; }
 .insta-link {
   display: inline-flex;
   align-items: center;
