@@ -42,3 +42,6 @@ In Claude cloud containers there's no Google Chrome; pass `--config` pointing at
 VoltAgent/awesome-design-md (https://github.com/VoltAgent/awesome-design-md) has DESIGN.md
 breakdowns of ~70 brands (Vercel, Linear, Stripe, Apple, Spotify…). Fetch one as a reference when
 picking a direction; don't vendor the whole catalog.
+
+Caching: `_headers` lets browsers keep CSS/JS for a day, so bump the `?v=` number on the
+`site.css` / `site.js` links in `index.html` (and `404.html`) whenever either file changes.
