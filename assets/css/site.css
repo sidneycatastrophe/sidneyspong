@@ -858,6 +858,7 @@ html:not(.js) .mic .mic-cable { stroke-dashoffset: 0; }
 .copy-btn:hover { background: #fff; color: var(--ink); }
 .copy-btn:active { transform: scale(0.96); }
 .contact-note { display: none; }
+.submit-row { position: relative; }
 .steps { display: grid; gap: 14px; margin: 28px 0 0; padding: 0; list-style: none; counter-reset: step; }
 .steps li { display: grid; grid-template-columns: auto 1fr; column-gap: 14px; counter-increment: step; }
 .steps li::before {
@@ -952,8 +953,15 @@ html:not(.js) .mic .mic-cable { stroke-dashoffset: 0; }
 @media (min-width: 960px) {
   .contact-grid { grid-template-columns: 1fr 1fr; gap: 96px; align-items: start; }
   .contact-form { padding: 40px; }
-  .contact-note { display: block; position: absolute; right: 2%; bottom: -88px; transform: rotate(-6deg); }
-  .contact-note .scribble-arrow { position: absolute; left: 70px; top: -4px; width: 64px; height: 52px; }
+  .contact-note {
+    display: block;
+    position: absolute;
+    right: calc(100% + 108px);
+    top: 50%;
+    transform: translateY(-95%) rotate(-6deg);
+    white-space: nowrap;
+  }
+  .contact-note .scribble-arrow { position: absolute; left: calc(100% + 6px); top: 10px; width: 64px; height: 40px; }
 }
 
 /* ---------- Footer ---------- */

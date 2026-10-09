@@ -534,12 +534,6 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4.2" /><circle cx="17.4" cy="6.6" r="1.1" class="dot" /></svg>
             <span>Follow along on Instagram <strong>@sidney.spong</strong></span>
           </a>
-          <p class="hand-note contact-note" aria-hidden="true">
-            say hi
-            <svg class="scribble scribble-arrow" viewBox="0 0 90 70">
-              <g filter="url(#crayon-boil)"><path pathLength="1" d="M6 14 C 36 4, 66 18, 78 52" /><path pathLength="1" d="M62 44 L 78 56 L 86 36" /></g>
-            </svg>
-          </p>
         </div>
 
         <form class="contact-form" id="contact-form" novalidate data-reveal>
@@ -568,10 +562,18 @@
             <p class="field-error" id="f-message-error" aria-live="polite"></p>
           </div>
           <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <button type="submit" class="btn btn-ink btn-block">
-            <span class="btn-label">Send message</span>
-            <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M6 4h6v6" /></svg></span>
-          </button>
+          <div class="submit-row">
+            <button type="submit" class="btn btn-ink btn-block">
+              <span class="btn-label">Send message</span>
+              <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M6 4h6v6" /></svg></span>
+            </button>
+            <p class="hand-note contact-note" aria-hidden="true">
+              say hi
+              <svg class="scribble scribble-arrow" viewBox="0 0 64 40">
+                <g filter="url(#crayon-boil)"><path pathLength="1" d="M4 8 C 24 2, 44 10, 56 26" /><path pathLength="1" d="M42 26 L 57 28 L 58 13" /></g>
+              </svg>
+            </p>
+          </div>
           <p class="form-status" role="status" aria-live="polite"></p>
           <p class="form-privacy">Your details are only used to reply to you. No mailing lists, no spam.</p>
         </form>
