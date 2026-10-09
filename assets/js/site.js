@@ -113,13 +113,6 @@
         if (!entry.isIntersecting) return;
         entry.target.classList.add("is-in");
         if (entry.target.classList.contains("scribble")) drawScribble(entry.target);
-        // Lesson cards sit side by side in a swipe row on phones: reveal them together
-        if (entry.target.hasAttribute("data-lesson")) {
-          Array.prototype.forEach.call(entry.target.parentElement.children, function (li) {
-            li.classList.add("is-in");
-            revealObserver.unobserve(li);
-          });
-        }
         revealObserver.unobserve(entry.target);
       });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
@@ -139,42 +132,6 @@
       el.classList.add("is-in");
       if (el.classList.contains("scribble")) drawScribble(el);
     });
-  }
-
-  /* ---------- Lessons: crossfade the sticky photo to match the lesson in view ---------- */
-  var lessonItems = document.querySelectorAll("[data-lesson]");
-  var stageImgs = document.querySelectorAll(".lesson-stage img");
-  if (lessonItems.length && "IntersectionObserver" in window) {
-    var lessonObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var id = entry.target.getAttribute("data-lesson");
-        Array.prototype.forEach.call(lessonItems, function (li) { li.classList.toggle("is-active", li === entry.target); });
-        Array.prototype.forEach.call(stageImgs, function (img) { img.classList.toggle("is-active", img.getAttribute("data-for") === id); });
-      });
-    }, { rootMargin: "-22% 0px -66% 0px" });
-    Array.prototype.forEach.call(lessonItems, function (li) { lessonObserver.observe(li); });
-  }
-
-  /* ---------- Lessons on phones: "01 / 06" counter + progress line while swiping ---------- */
-  var lessonRail = document.querySelector(".lesson-list");
-  var countEl = document.querySelector("[data-lesson-count]");
-  var progressEl = document.querySelector("[data-lesson-progress]");
-  if (lessonRail && countEl && progressEl) {
-    var total = lessonRail.children.length;
-    var ticking = false;
-    lessonRail.addEventListener("scroll", function () {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(function () {
-        var max = lessonRail.scrollWidth - lessonRail.clientWidth;
-        var ratio = max > 0 ? lessonRail.scrollLeft / max : 0;
-        var index = Math.min(total, Math.round(ratio * (total - 1)) + 1);
-        countEl.textContent = (index < 10 ? "0" : "") + index;
-        progressEl.style.transform = "scaleX(" + Math.max(1 / total, ratio) + ")";
-        ticking = false;
-      });
-    }, { passive: true });
   }
 
   /* ---------- Video: load YouTube only when someone presses play ---------- */

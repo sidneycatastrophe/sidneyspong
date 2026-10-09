@@ -18,8 +18,8 @@ opening the visitor's email app with the message pre-filled.
 Reviews: copy a `<figure class="review">` block in the `#reviews` section; the first stays featured.
 
 Video: `#watch` shows a poster image and only loads YouTube (nocookie) when pressed; the video ID
-lives in `data-video`. Lessons: each `[data-lesson]` row has an inline photo (mobile) and a matching
-`.lesson-stage img[data-for]` (desktop sticky crossfade); keep them in sync.
+lives in `data-video`. "What I offer" uses crayon-drawn SVG icons (`.offer-icon`, 64x64 viewBox,
+`pathLength="1"` strokes) rather than photos, so the section is about the student, not Sidney.
 
 Hosting: Cloudflare Pages project "sidneyspong", auto-deploys `main` to sidneyspong.uk; every other
 branch gets a preview at https://<branch-slug>.sidneyspong.pages.dev.
