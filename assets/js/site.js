@@ -9,7 +9,7 @@
      While it's empty, "Send message" opens the visitor's email app with
      everything pre-filled, addressed to CONTACT_EMAIL.
      ------------------------------------------------------------------ */
-  var WEB3FORMS_ACCESS_KEY = "";
+  var WEB3FORMS_ACCESS_KEY = "1c7348c6-087f-4e5a-a7b6-df78a571f704";
   var CONTACT_EMAIL = "info@sidneyspong.uk";
 
   var root = document.documentElement;
