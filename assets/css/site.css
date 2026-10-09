@@ -548,35 +548,32 @@ html:not(.js) .mic .mic-cable { stroke-dashoffset: 0; }
 }
 
 /* ---------- How I teach ---------- */
-.teach-grid { display: grid; gap: 48px; }
-.teach-expect {
-  align-self: start;
-  padding: 28px 24px;
-  border-radius: var(--r-lg);
-  background: #fff;
-  box-shadow: 0 18px 40px -32px rgba(22, 23, 26, 0.35);
-}
-.teach-expect .ticks { margin-top: 20px; gap: 12px; }
+/* Three distinct beats: photo + intro, a full-width "in every session" strip, then the closing line. */
+.teach-grid { display: grid; gap: 40px; align-items: center; }
+.teach-photo { aspect-ratio: 3 / 2; box-shadow: 0 30px 60px -40px rgba(22, 23, 26, 0.45); }
+
+.teach-expect { margin-top: clamp(56px, 8vw, 96px); padding-top: 32px; border-top: 1px solid var(--line); }
+.teach-expect .ticks { margin-top: 22px; gap: 14px 40px; }
 .teach-expect .ticks li { font-weight: 480; align-items: flex-start; }
 .teach-expect .ticks li::before { margin-top: 2px; }
+@media (min-width: 640px) { .teach-expect .ticks { grid-template-columns: 1fr 1fr; } }
+
 .manifesto {
   margin-top: clamp(72px, 11vw, 136px);
-  max-width: 22ch;
-  font-size: clamp(2rem, 6.4vw, 4.25rem);
+  max-width: 20ch;
+  font-size: clamp(2rem, 6.4vw, 4.5rem);
   font-weight: 580;
   letter-spacing: -0.045em;
   line-height: 1.06;
   text-wrap: balance;
 }
 .manifesto .scribble-underline { bottom: -0.1em; }
-.manifesto-row { display: grid; gap: 40px; margin-top: clamp(72px, 11vw, 136px); align-items: center; }
-.manifesto-row .manifesto { margin-top: 0; }
-.manifesto-photo { aspect-ratio: 3 / 2; box-shadow: 0 30px 60px -40px rgba(22, 23, 26, 0.45); }
+
 @media (min-width: 960px) {
-  .teach-grid { grid-template-columns: 1.25fr 0.75fr; gap: 96px; align-items: start; }
-  .teach-expect { padding: 36px 32px; margin-top: 12px; }
-  .manifesto-row { grid-template-columns: 1.05fr 0.95fr; gap: 72px; }
-  .manifesto-row .manifesto { font-size: clamp(2.25rem, 3.6vw, 3.5rem); }
+  .teach-grid { grid-template-columns: 1fr 1fr; gap: 80px; }
+  .teach-photo { order: -1; }
+  .teach-expect { display: grid; grid-template-columns: 0.32fr 1fr; gap: 40px; align-items: start; }
+  .teach-expect .ticks { margin-top: 0; grid-template-columns: repeat(3, 1fr); gap: 18px 40px; }
 }
 
 /* ---------- Watch ---------- */
