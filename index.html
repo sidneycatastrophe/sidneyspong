@@ -1,651 +1,596 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
-  <title>Sidney Spong · Vocal Coaching & Artist Development</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Vocal coaching, performance training and songwriting support with Sidney Spong in Folkestone – in-person and online."
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Sidney Spong · Vocal Coaching in Folkestone &amp; Online</title>
+  <meta name="description" content="Personalised vocal coaching in Folkestone and online with Sidney Spong: technique, contemporary and alternative vocals, jazz, musical theatre, performance, songwriting and recording, for all abilities." />
+  <meta name="theme-color" content="#f7f7f4" />
+  <link rel="canonical" href="https://sidneyspong.uk/" />
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Sidney Spong · Vocal Coaching & Artist Development" />
-  <meta property="og:description" content="Vocal coaching, performance training and songwriting support with Sidney Spong in Folkestone – in-person and online." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/images/Sid_Singing_Landscape.jpg" />
+  <meta property="og:url" content="https://sidneyspong.uk/" />
+  <meta property="og:title" content="Sidney Spong · Vocal Coaching in Folkestone &amp; Online" />
+  <meta property="og:description" content="Personalised vocal coaching for singers, songwriters and performers of all abilities, in Folkestone and online." />
+  <meta property="og:image" content="https://sidneyspong.uk/assets/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    /* Small helper for an accessible, visually-hidden H1 / skip link */
-    .sr-only {
-      position: absolute !important;
-      width: 1px; height: 1px;
-      padding: 0; margin: -1px;
-      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
-    }
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-    }
-    .skip-link:focus {
-      left: 10px;
-      top: 10px;
-      width: auto;
-      height: auto;
-      padding: 8px 12px;
-      background: #000;
-      color: #fff;
-      z-index: 9999;
-    }
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/css/site.css" />
 
-    /* Carousel container: tall and responsive */
-    .carousel-window {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      min-height: 320px;
-    }
-
-    .carousel-track {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-
-    .carousel-slide {
-      position: absolute;
-      inset: 0;
-      display: block;
-      opacity: 0;
-      transition: opacity 400ms ease-in-out;
-      pointer-events: none;
-    }
-
-    .carousel-slide.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .carousel-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      display: block;
-    }
-
-    .carousel-controls .carousel-btn {
-      position: relative;
-      z-index: 3;
-    }
-
-    .carousel-dots .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      margin: 0 6px;
-      border: none;
-      background: rgba(255,255,255,0.6);
-    }
-    .carousel-dots .dot.active {
-      background: rgba(255,255,255,1);
-      box-shadow: 0 0 0 3px rgba(0,0,0,0.15) inset;
-    }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Sidney Spong Vocal Coaching",
+    "url": "https://sidneyspong.uk/",
+    "email": "info@sidneyspong.uk",
+    "image": "https://sidneyspong.uk/assets/images/og-image.jpg",
+    "address": { "@type": "PostalAddress", "addressLocality": "Folkestone", "addressCountry": "GB" },
+    "priceRange": "£30–£220",
+    "sameAs": ["https://www.instagram.com/sidney.spong/"]
+  }
+  </script>
 </head>
 <body>
-  <a class="skip-link" href="#top">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-   <!-- ================= HEADER ================= -->
-  <header class="site-header" role="banner">
-    <div class="container nav-container">
-      <a href="#top" class="brand" aria-label="Sidney Spong · Home">
-        <img
-          src="assets/images/SidneySpongTextLogo.png"
-          alt="Sidney Spong Logo"
-          class="brand-logo"
-          loading="lazy"
-        />
-      </a>
+  <!-- Shared crayon texture. It "boils" (re-seeds a few times a second) for a hand-animated feel. -->
+  <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="crayon-boil" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="1" result="noise">
+          <animate attributeName="seed" values="1;7;13" dur="0.5s" calcMode="discrete" repeatCount="indefinite" />
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" result="wobble" />
+        <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.4 2.05" result="grain" />
+        <feComposite in="wobble" in2="grain" operator="in" />
+      </filter>
+    </defs>
+  </svg>
 
-      <h1 class="sr-only">Sidney Spong · Vocal Coaching & Artist Development</h1>
-
-      <nav class="main-nav" role="navigation" aria-label="Primary">
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" data-header>
+    <div class="nav-shell">
+      <a href="#top" class="wordmark" translate="no" aria-label="Sidney Spong, back to top">Sidney Spong</a>
+      <nav class="nav-links" aria-label="Primary">
         <a href="#about">About</a>
-        <a href="#skills">Vocal Coaching</a>
-        <a href="#packages">Lesson Packages</a>
-        <a href="#testimonial">Testimonials</a>
+        <a href="#lessons">Lessons</a>
+        <a href="#prices">Prices</a>
+        <a href="#reviews">Reviews</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact" class="nav-cta">Book a session</a>
       </nav>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span>
+      <a href="#contact" class="btn btn-ink btn-sm nav-cta">Book a free session</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="sr-only">Menu</span>
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
       </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav aria-label="Mobile">
+        <a href="#about">About</a>
+        <a href="#lessons">Lessons</a>
+        <a href="#prices">Prices</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="mobile-menu-cta">Book a free session</a>
+      </nav>
     </div>
   </header>
 
-  <main id="top" tabindex="-1">
-    <!-- =============== HERO (MIC + SLOGAN) =============== -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <!-- LEFT: MIC image -->
-        <div class="hero-graphic hero-graphic-left">
-          <img
-            src="assets/images/Microphone.png"
-            alt="Microphone illustration"
-            loading="lazy"
-            decoding="async"
-          />
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-reveal>Vocal coaching &amp; artist development</p>
+          <h1 class="hero-title">
+            <span class="line" data-reveal>Find your
+              <span class="scribbled">voice.
+                <svg class="scribble scribble-underline" viewBox="0 0 220 30" preserveAspectRatio="none" aria-hidden="true">
+                  <g filter="url(#crayon-boil)">
+                    <path pathLength="1" d="M4 18 C 50 8, 120 6, 214 12" />
+                    <path pathLength="1" d="M20 24 C 80 16, 150 15, 200 20" />
+                  </g>
+                </svg>
+              </span>
+            </span>
+            <span class="line line-soft" data-reveal>Discover your sound.</span>
+          </h1>
+          <p class="hero-sub" data-reveal>
+            Personalised vocal coaching for singers, songwriters and performers of all abilities, in Folkestone and online. Your first session is free.
+          </p>
+          <div class="hero-ctas" data-reveal>
+            <a href="#contact" class="btn btn-ink">
+              Book a free session
+              <span class="btn-icon" aria-hidden="true">
+                <svg viewBox="0 0 16 16"><path d="M4 12 12 4M6 4h6v6" /></svg>
+              </span>
+            </a>
+            <a href="#prices" class="text-link">See prices</a>
+          </div>
         </div>
 
-        <!-- RIGHT: SLOGAN image + core offer text -->
-        <div class="hero-content">
-          <div class="hero-tagline">
-            Folkestone · In-person & online vocal coaching
-          </div>
-
-          <div class="hero-slogan-wrapper">
-            <img
-              src="assets/images/FindYourVoice.png"
-              alt="Find your voice, discover your sound"
-              class="hero-slogan-svg"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-
-          <p class="hero-subtitle">
-            Vocal coaching · Performance training · Songwriting & artist development.
+        <div class="hero-visual">
+          <p class="hand-note hero-note" aria-hidden="true">
+            that's me!
+            <svg class="scribble scribble-arrow" viewBox="0 0 90 70">
+              <g filter="url(#crayon-boil)">
+                <path pathLength="1" d="M8 8 C 40 6, 66 22, 72 56" />
+                <path pathLength="1" d="M58 46 L 72 58 L 82 40" />
+              </g>
+            </svg>
           </p>
+          <figure class="hero-photo">
+            <img
+              src="assets/images/photos/rooftop-portrait-1280.webp"
+              srcset="assets/images/photos/rooftop-portrait-720.webp 481w, assets/images/photos/rooftop-portrait-1280.webp 855w"
+              sizes="(min-width: 960px) 44vw, 100vw"
+              width="855" height="1280"
+              alt="Sidney singing and playing a red electric guitar at a rooftop gig by the sea"
+              fetchpriority="high" />
+          </figure>
 
-          <ul class="hero-points">
-            <li>Supportive, confidence-building sessions</li>
-            <li>Technique, tone & creative expression</li>
-            <li>For all levels – beginners to advanced</li>
-          </ul>
-
-          <div class="hero-cta-row">
-            <a href="mailto:info@sidneyspong.uk" class="btn primary">
-              Email for a free first session
-            </a>
-            <a href="#packages" class="btn ghost">
-              View lesson packages
-            </a>
-          </div>
+          <!-- Animated crayon microphone -->
+          <svg class="mic" viewBox="0 -20 240 320" role="img" aria-label="Hand-drawn microphone">
+            <defs>
+              <clipPath id="mic-head-clip"><circle cx="0" cy="0" r="30" /></clipPath>
+            </defs>
+            <g filter="url(#crayon-boil)">
+              <g class="mic-waves" fill="none" stroke-linecap="round">
+                <path class="wave w1" d="M143.5 29.8 A52 52 0 0 1 180.2 66.5" />
+                <path class="wave w2" d="M147.6 14.3 A68 68 0 0 1 195.7 62.4" />
+                <path class="wave w3" d="M151.7 -1.1 A84 84 0 0 1 211.1 58.3" />
+              </g>
+              <path class="mic-cable" pathLength="1" d="M187 224 C 204 262, 160 286, 126 266 S 74 218, 44 246 S 16 300, -12 292" />
+              <g class="mic-body-wrap">
+                <g transform="translate(130 80) rotate(-22)">
+                  <path class="mic-line mic-fill" d="M-34 0 a34 34 0 1 0 68 0 a34 34 0 1 0 -68 0" />
+                  <g clip-path="url(#mic-head-clip)" class="mic-hatch">
+                    <path d="M-40 -30 L 30 40 M-40 -12 L 12 40 M-40 6 L -6 40 M-30 -40 L 40 30 M-12 -40 L 40 12 M6 -40 L 40 -6" />
+                    <path d="M40 -30 L -30 40 M40 -12 L -12 40 M40 6 L 6 40 M30 -40 L -40 30 M12 -40 L -40 12 M-6 -40 L -40 -6" />
+                  </g>
+                  <path class="mic-line thin" d="M-30 -14 C -22 -37, 25 -38, 33 -5 C 39 22, 10 37, -11 34" />
+                  <path class="mic-line mic-fill" d="M-25 48 L -12 150 Q 0 157 12 150 L 25 48 Z" />
+                  <path class="mic-line thin" d="M12 62 L 6 138" />
+                  <path class="mic-band" d="M-6 82 L 6 82 M-5 88 L 5 88" />
+                  <path class="mic-line mic-fill" d="M-29 31 L 29 31 L 27 48 L -27 48 Z" />
+                  <path class="mic-band" d="M-24 35.5 L 24 36 M-24 40 L 24 40 M-23 44 L 23 44.5" />
+                </g>
+              </g>
+              <g class="mic-sparkles" fill="none" stroke-linecap="round">
+                <path class="spark s1" d="M44 40 L 44 62 M33 51 L 55 51" />
+                <path class="spark s2" d="M214 120 L 214 134 M207 127 L 221 127" />
+              </g>
+            </g>
+          </svg>
         </div>
       </div>
     </section>
 
-    <!-- =============== PHOTO BANNER (LANDSCAPE) =============== -->
-    <section class="hero-banner">
-      <div class="hero-banner-inner">
-        <img
-          src="assets/images/Sid_Singing_Landscape.jpg"
-          alt="Sidney Spong performing live"
-          class="hero-banner-image"
-          loading="lazy"
-          decoding="async"
-        />
+    <!-- ================= MARQUEE ================= -->
+    <div class="marquee" aria-label="Styles I teach">
+      <div class="marquee-track">
+        <ul class="marquee-list">
+          <li>Indie &amp; rock</li><li>Pop &amp; contemporary</li><li>Jazz</li><li>Musical theatre</li><li>Choral</li><li>Alternative</li><li>Songwriting</li><li>Recording</li>
+        </ul>
+        <ul class="marquee-list" aria-hidden="true">
+          <li>Indie &amp; rock</li><li>Pop &amp; contemporary</li><li>Jazz</li><li>Musical theatre</li><li>Choral</li><li>Alternative</li><li>Songwriting</li><li>Recording</li>
+        </ul>
       </div>
+    </div>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-photos" data-reveal>
+          <figure class="photo photo-main parallax">
+            <img src="assets/images/photos/piano-crowd-720.webp"
+                 srcset="assets/images/photos/piano-crowd-720.webp 479w, assets/images/photos/piano-crowd-1280.webp 852w"
+                 sizes="(min-width: 960px) 34vw, 78vw" width="852" height="1280" loading="lazy" decoding="async"
+                 alt="Sidney playing piano to a packed room" />
+          </figure>
+          <figure class="photo photo-inset">
+            <img src="assets/images/photos/piano-shout-720.webp" width="720" height="479" loading="lazy" decoding="async"
+                 alt="Sidney belting at the keyboard" />
+          </figure>
+        </div>
+
+        <div class="about-copy">
+          <h2 data-reveal>Hi, I'm Sidney.</h2>
+          <div class="prose" data-reveal>
+            <p>I'm a vocalist, songwriter, actor and vocal coach based in Folkestone. As a recording and performing artist I've toured the UK and worked across television, radio, live music and the studio: fronting bands, releasing my own music and collaborating with composers and musicians. My screen work includes a vocal credit on <em>Tiptoe</em>, the Russell T Davies series.</p>
+            <p>I've trained with vocal coaches and musicians including Kate Cameron, Gareth Malone, Nicola Palmer and ILĀ, and I teach privately and at Seaview Studios.</p>
+          </div>
+          <p class="about-belief" data-reveal>Great vocal coaching isn't about making every singer sound the same. It's about understanding your instrument, discovering what makes your voice unique, and having the freedom to use it.</p>
+        </div>
+      </div>
+
       <div class="container">
-        <p class="hero-banner-caption">
-          Live performance, storytelling, and real-world experience in every session.
+        <ul class="creds" aria-label="Why work with me">
+          <li data-reveal><strong>Grade 8 vocalist</strong><span>Trained with leading UK vocal coaches and musicians.</span></li>
+          <li data-reveal><strong>Recording &amp; performing artist</strong><span>UK touring, original releases, studio work and television credits.</span></li>
+          <li data-reveal><strong>Multi-genre</strong><span>Jazz and musical theatre through to indie, rock and alternative.</span></li>
+          <li data-reveal><strong>Experienced coach</strong><span>Teaching teenagers and adults at every level, privately and at Seaview Studios.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= WHAT I OFFER ================= -->
+    <section class="section lessons" id="lessons">
+      <div class="container lessons-grid">
+        <div class="lessons-head">
+          <h2 data-reveal>What I offer</h2>
+          <p class="lede" data-reveal>Your voice is individual. Your coaching should be too. Every session is shaped around what you want to achieve, combining technique with creativity and real experience.</p>
+          <p class="swipe-meta" aria-hidden="true"><span class="hand-note">swipe →</span><span class="lesson-count"><span data-lesson-count>01</span> / 06</span></p>
+          <div class="lesson-stage" aria-hidden="true">
+            <img class="is-active" data-for="1" src="assets/images/photos/golden-mic-720.webp" width="480" height="720" loading="lazy" decoding="async" alt="" />
+            <img data-for="2" src="assets/images/photos/stage-pink-720.webp" width="480" height="720" loading="lazy" decoding="async" alt="" />
+            <img data-for="3" src="assets/images/photos/stage-purple-720.webp" width="542" height="720" loading="lazy" decoding="async" alt="" />
+            <img data-for="4" src="assets/images/photos/crowd-blur-b-960.webp" width="960" height="641" loading="lazy" decoding="async" alt="" />
+            <img data-for="5" src="assets/images/photos/piano-back-720.webp" width="720" height="480" loading="lazy" decoding="async" alt="" />
+            <img data-for="6" src="assets/images/photos/acoustic-720.webp" width="495" height="720" loading="lazy" decoding="async" alt="" />
+          </div>
+        </div>
+        <ol class="lesson-list" tabindex="0" aria-label="Lesson areas">
+          <li data-reveal data-lesson="1" class="is-active">
+            <figure class="lesson-photo"><img src="assets/images/photos/golden-mic-720.webp" width="480" height="720" loading="lazy" decoding="async" alt="Sidney singing into a microphone in warm stage light" /></figure>
+            <span class="num" aria-hidden="true">01</span>
+            <div>
+              <h3>Vocal technique &amp; development</h3>
+              <p>Build strength, flexibility and control with exercises for breath, resonance, registers, range, tone and healthy vocal production.</p>
+            </div>
+          </li>
+          <li data-reveal data-lesson="2">
+            <figure class="lesson-photo"><img src="assets/images/photos/stage-pink-720.webp" width="480" height="720" loading="lazy" decoding="async" alt="Sidney singing with a band under pink stage lights" /></figure>
+            <span class="num" aria-hidden="true">02</span>
+            <div>
+              <h3>Contemporary &amp; alternative vocals</h3>
+              <p>The sounds that make your favourite artists distinctive: powerful belts, expressive rasp, breathy indie textures and mixed voice, built with coordination, control and vocal health.</p>
+            </div>
+          </li>
+          <li data-reveal data-lesson="3">
+            <figure class="lesson-photo"><img src="assets/images/photos/stage-purple-720.webp" width="542" height="720" loading="lazy" decoding="async" alt="Sidney singing under a red lamp in a small venue" /></figure>
+            <span class="num" aria-hidden="true">03</span>
+            <div>
+              <h3>Jazz, musical theatre &amp; choral</h3>
+              <p>Phrasing, interpretation, dynamics and stylistic awareness, whether it's your first jazz standard, a musical theatre audition or refining choral technique.</p>
+            </div>
+          </li>
+          <li data-reveal data-lesson="4">
+            <figure class="lesson-photo"><img src="assets/images/photos/crowd-blur-b-960.webp" width="960" height="641" loading="lazy" decoding="async" alt="Sidney performing with a guitar on a seaside rooftop, crowd in the foreground" /></figure>
+            <span class="num" aria-hidden="true">04</span>
+            <div>
+              <h3>Performance &amp; confidence</h3>
+              <p>Stage presence, storytelling and microphone technique. Connect with your material, manage nerves and communicate with an audience.</p>
+            </div>
+          </li>
+          <li data-reveal data-lesson="5">
+            <figure class="lesson-photo"><img src="assets/images/photos/piano-back-720.webp" width="720" height="480" loading="lazy" decoding="async" alt="Sidney singing at an upright piano in a candlelit room" /></figure>
+            <span class="num" aria-hidden="true">05</span>
+            <div>
+              <h3>Songwriting &amp; artist development</h3>
+              <p>Lyrics, melody and musical identity. Develop original material, find your artistic direction and build confidence in the music you make.</p>
+            </div>
+          </li>
+          <li data-reveal data-lesson="6">
+            <figure class="lesson-photo"><img src="assets/images/photos/acoustic-720.webp" width="495" height="720" loading="lazy" decoding="async" alt="Sidney singing into a microphone with an acoustic guitar" /></figure>
+            <span class="num" aria-hidden="true">06</span>
+            <div>
+              <h3>Recording &amp; studio technique</h3>
+              <p>Use professional recording equipment to develop mic technique and consistency, record your progress and learn to translate your voice to the studio.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="lesson-progress" aria-hidden="true"><span data-lesson-progress></span></div>
+      </div>
+    </section>
+
+    <!-- ================= REVIEWS ================= -->
+    <section class="section reviews" id="reviews">
+      <div class="container">
+        <h2 data-reveal>What students say</h2>
+        <!-- Students' own words. To add one, copy a <figure class="review"> block. -->
+        <div class="review-wall">
+          <figure class="review" data-reveal>
+            <svg class="scribble quote-mark" viewBox="0 0 80 60" aria-hidden="true">
+              <g filter="url(#crayon-boil)"><path d="M30 8 C 12 14, 6 30, 10 48 M24 34 C 18 30, 10 32, 10 42 C 10 52, 22 54, 26 46 C 30 38, 26 32, 20 32" /><path d="M66 8 C 48 14, 42 30, 46 48 M60 34 C 54 30, 46 32, 46 42 C 46 52, 58 54, 62 46 C 66 38, 62 32, 56 32" /></g>
+            </svg>
+            <blockquote>
+              <p>Sidney is an incredible vocal coach—supportive, intuitive, and brilliantly talented. <mark>He knows how to bring out the best in your voice without ever making you feel pressured.</mark> His feedback is kind, clear, and empowering, and he makes every session fun and confidence-building. I couldn’t ask for a better teacher, and I’m so proud to be his first client.</p>
+            </blockquote>
+            <details class="review-more">
+              <summary>Read Ery's full review</summary>
+              <div class="review-more-body">
+                <p>Working with Sidney as my vocal coach has been an absolute joy. Not only is he a phenomenal singer with a brilliant ear for music, but he also brings a deep sense of understanding, empathy, and fun to every session. His musicianship is outstanding, but what really sets him apart is the way he tailors his teaching to each individual.</p>
+                <p>Sidney creates a safe, encouraging space where you're never pressured but always supported. He listens carefully to your voice, helps you discover what works for you, and celebrates your progress every step of the way. His positive reinforcement is genuinely uplifting, and when there’s something to improve, he approaches it with kindness and clarity: ‘This is what we’ll work on, and we’ll get there together.’</p>
+                <p>He’s helped me not only with technique—like pitch matching, vocal closure, and blending head and chest voice—but also with performance confidence and ear training. He breaks things down in a way that’s easy to understand and makes you feel capable, not self-conscious.</p>
+                <p>Sidney is not just a gifted vocalist and teacher—he’s also great fun to be around. I’m so glad I found him, and I’m incredibly proud to be his first client. I look forward to continuing our work together and can’t wait to make my debut performance with his guidance behind me.</p>
+              </div>
+            </details>
+            <figcaption>
+              <span class="avatar" aria-hidden="true">E</span>
+              <span><strong>Ery, 42</strong><span>Vocal student</span></span>
+            </figcaption>
+          </figure>
+
+          <figure class="review" data-reveal>
+            <svg class="scribble quote-mark" viewBox="0 0 80 60" aria-hidden="true">
+              <g filter="url(#crayon-boil)"><path d="M30 8 C 12 14, 6 30, 10 48 M24 34 C 18 30, 10 32, 10 42 C 10 52, 22 54, 26 46 C 30 38, 26 32, 20 32" /><path d="M66 8 C 48 14, 42 30, 46 48 M60 34 C 54 30, 46 32, 46 42 C 46 52, 58 54, 62 46 C 66 38, 62 32, 56 32" /></g>
+            </svg>
+            <blockquote>
+              <p>Sid makes every lesson feel like a brand new and refreshing experience, whether it's a new technique, new song or working on song writing skills.</p>
+              <p>Sid has made every lesson a blast as well as providing <mark>a comfortable environment to be yourself and experiment with different techniques without any judgement.</mark></p>
+              <p>I strongly recommend Sid to anyone wanting to step into the world of singing! 👍🏼</p>
+            </blockquote>
+            <figcaption>
+              <span class="avatar" aria-hidden="true">L</span>
+              <span><strong>Luke, 24</strong><span>Vocal student</span></span>
+            </figcaption>
+          </figure>
+
+          <figure class="review" data-reveal>
+            <svg class="scribble quote-mark" viewBox="0 0 80 60" aria-hidden="true">
+              <g filter="url(#crayon-boil)"><path d="M30 8 C 12 14, 6 30, 10 48 M24 34 C 18 30, 10 32, 10 42 C 10 52, 22 54, 26 46 C 30 38, 26 32, 20 32" /><path d="M66 8 C 48 14, 42 30, 46 48 M60 34 C 54 30, 46 32, 46 42 C 46 52, 58 54, 62 46 C 66 38, 62 32, 56 32" /></g>
+            </svg>
+            <blockquote>
+              <p>Sidney is absolutely brilliant- over a short period of time, he’s helped me <mark>refine technique, expand my repertoire and massively improve my confidence.</mark> I’ve noticed such an improvement in my singing over the last few months. Lessons are always so much fun - a fantastic safe space to explore and go beyond my comfort zone. 💕</p>
+            </blockquote>
+            <figcaption>
+              <span class="avatar" aria-hidden="true">A</span>
+              <span><strong>Alaina, 28</strong><span>Vocal student</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW I TEACH ================= -->
+    <section class="section teach" id="approach">
+      <div class="container">
+        <div class="teach-grid">
+          <div class="teach-copy">
+            <h2 data-reveal>Technique meets individuality.</h2>
+            <div class="prose" data-reveal>
+              <p>Some students come to me to build range or prepare for a demanding performance. Others are finding their voice for the first time, rebuilding confidence, or just want a space to explore music without judgement. There's no single path, so I shape each session around your goals, the music you love and the way you learn, and keep the joy of making music at the centre of it.</p>
+            </div>
+          </div>
+          <div class="teach-expect" data-reveal>
+            <h3>In every session</h3>
+            <ul class="ticks">
+              <li>A warm, supportive environment</li>
+              <li>Exercises tailored to your voice</li>
+              <li>Clear, practical feedback</li>
+              <li>Space for creativity and expression</li>
+              <li>Techniques to practise between lessons</li>
+              <li>Confidence, musicality and steady progress</li>
+            </ul>
+          </div>
+        </div>
+        <p class="manifesto" data-reveal>
+          Singing isn't just about what your voice can do. It's about what you want to
+          <span class="scribbled">say
+            <svg class="scribble scribble-underline" viewBox="0 0 220 30" preserveAspectRatio="none" aria-hidden="true">
+              <g filter="url(#crayon-boil)">
+                <path pathLength="1" d="M4 18 C 50 8, 120 6, 214 12" />
+                <path pathLength="1" d="M20 24 C 80 16, 150 15, 200 20" />
+              </g>
+            </svg>
+          </span> with it.
         </p>
       </div>
     </section>
 
-    <!-- =============== ABOUT + CAROUSEL =============== -->
-    <section id="about" class="section section-dark">
-      <div class="container split">
-        <div class="split-text">
-          <p class="section-eyebrow">About me</p>
-          <h2>Hi, I’m Sidney.</h2>
-          <p>
-            I’m a vocalist, songwriter and actor based in Folkestone. I’ve spent
-            years performing across the UK – on stage, on TV and radio, and in
-            bands and studio sessions. Music isn’t just something I do; it’s the
-            world I live in every day.
-          </p>
-          <p>
-            I’ve trained with leading vocal coaches including Kate Cameron,
-            Gareth Malone,
-            Nicola Palmer and ILĀ. Their guidance helped me build
-            a technique that’s expressive, flexible and rooted in real artistry,
-            not rigid rules.
-          </p>
-          <p>
-            In lessons, I bring all of that experience into the room – whether
-            we’re strengthening your voice, shaping a song, or preparing for a
-            performance or studio session.
-          </p>
-          <ul class="about-list">
-            <li>Grade 8 vocalist, multi-genre and texture-focused</li>
-            <li>Experience teaching all ages and levels</li>
-            <li>Private studio with pro recording equipment</li>
-          </ul>
-        </div>
-
-        <div class="split-media">
-          <div class="photo-carousel">
-            <div class="carousel-window" aria-live="polite">
-              <div class="carousel-track">
-                <div class="carousel-slide active">
-                  <img
-                    src="assets/images/Sid_Singing_1.jpg"
-                    alt="Sidney singing live 1"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div class="carousel-slide">
-                  <img
-                    src="assets/images/Sid_Singing_2.jpg"
-                    alt="Sidney singing live 2"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div class="carousel-slide">
-                  <img
-                    src="assets/images/Sid_Singing_3.jpg"
-                    alt="Sidney singing live 3"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div class="carousel-slide">
-                  <img
-                    src="assets/images/Sid_Singing_4.JPG"
-                    alt="Sidney singing live 4"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div class="carousel-slide">
-                  <img
-                    src="assets/images/Sid_Singing_5.PNG"
-                    alt="Sidney singing live 5"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="carousel-controls">
-              <button class="carousel-btn prev" aria-label="Previous image">‹</button>
-              <button class="carousel-btn next" aria-label="Next image">›</button>
-            </div>
-            <div class="carousel-dots" role="tablist" aria-label="Carousel thumbnails">
-              <button class="dot active" aria-label="Slide 1" aria-selected="true"></button>
-              <button class="dot" aria-label="Slide 2" aria-selected="false"></button>
-              <button class="dot" aria-label="Slide 3" aria-selected="false"></button>
-              <button class="dot" aria-label="Slide 4" aria-selected="false"></button>
-              <button class="dot" aria-label="Slide 5" aria-selected="false"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =============== VOCAL COACHING / MAIN SKILLS =============== -->
-    <section id="skills" class="section section-deep">
-      <div class="container split">
-        <div class="split-text">
-          <p class="section-eyebrow">Vocal coaching & artist development</p>
-          <h2>What we can work on together</h2>
-          <p>
-            Sessions are tailored to you. We can stay purely with vocal
-            technique, or weave in songwriting, performance and recording to
-            build you as a complete artist.
-          </p>
-        </div>
-
-        <div class="split-media split-media-right">
-          <div class="skills-grid">
-            <div class="skill-card">
-              <h3>Technique & tone</h3>
-              <p>
-                Breath support, vocal closure, mix, range, texture and stamina –
-                all approached in a way that fits your voice, not a one-size-fits-all method.
-              </p>
-            </div>
-            <div class="skill-card">
-              <h3>Performance & confidence</h3>
-              <p>
-                Storytelling, stage presence, audition prep and managing nerves,
-                with tools you can take into gigs, shows or studio sessions.
-              </p>
-            </div>
-            <div class="skill-card">
-              <h3>Songwriting & recording</h3>
-              <p>
-                Lyrics, melody, structure and arrangement, plus support for
-                recording vocals so what you hear back finally matches how you feel.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =============== LESSON PACKAGES =============== -->
-    <section id="packages" class="section section-dark">
+    <!-- ================= WATCH ================= -->
+    <section class="section watch" id="watch">
       <div class="container">
-        <p class="section-eyebrow">Lesson packages</p>
-        <h2>Flexible options for your voice and your schedule</h2>
-
-        <div class="packages-grid">
-          <!-- 30 min -->
-          <article class="package-card">
-            <h3>Single 40-minute session</h3>
-            <p class="package-price">£30</p>
-            <p class="package-blurb">
-              Perfect for younger students, beginners or focused check-ins.
-            </p>
-            <ul>
-              <li>Technique basics and healthy habits</li>
-              <li>Warm-ups tailored to your voice</li>
-              <li>Confidence building</li>
-              <li>Song practice or troubleshooting</li>
-            </ul>
-          </article>
-
-          <!-- 60 min -->
-          <article class="package-card">
-            <h3>Single 60-minute session</h3>
-            <p class="package-price">£40</p>
-            <p class="package-blurb">
-              A full vocal coaching session with space to explore technique and artistry.
-            </p>
-            <ul>
-              <li>Technique, tone, range & control</li>
-              <li>Song interpretation & expression</li>
-              <li>Creative coaching (songwriting or performance)</li>
-              <li>Optional recording and feedback</li>
-            </ul>
-          </article>
-
-          <!-- 6x60 – highlighted -->
-          <article class="package-card package-card-highlight">
-            <div class="package-tag">Most popular</div>
-            <h3>6 × 60-minute sessions</h3>
-            <p class="package-price">£220</p>
-            <p class="package-blurb">
-              A structured, progressive programme for consistent growth and clear results.
-            </p>
-            <ul>
-              <li>Personalised plan based on your goals</li>
-              <li>Weekly warm-ups & targeted technique training</li>
-              <li>Song development over time (cover or original)</li>
-              <li>Session recordings for self-review</li>
-              <li>End-of-package reflection & next-steps plan</li>
-            </ul>
-          </article>
+        <div class="watch-head">
+          <h2 data-reveal>Hear me in action</h2>
+          <p class="lede" data-reveal>&ldquo;China Bird&rdquo; is my song, written and fronted by me with Oscar the Band and filmed on Sunny Sands in Folkestone. It's the same craft I teach: writing something that means something, and singing it with everything you've got.</p>
         </div>
+        <div class="video" data-video="8S89s0-R7yM" data-reveal>
+          <button type="button" class="video-play" aria-label="Play the China Bird music video by Oscar the Band">
+            <img src="assets/images/photos/beach-band-960.webp"
+                 srcset="assets/images/photos/beach-band-960.webp 960w, assets/images/photos/beach-band-1600.webp 1600w"
+                 sizes="(min-width: 1300px) 1240px, 100vw" width="1600" height="1200" loading="lazy" decoding="async" alt="" />
+            <span class="video-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" /></svg>
+            </span>
+            <span class="video-caption" aria-hidden="true">Oscar the Band · China Bird</span>
+          </button>
+        </div>
+        <p class="video-note" data-reveal>
+          Plays from YouTube. <a href="https://www.youtube.com/watch?v=8S89s0-R7yM" target="_blank" rel="noopener">Watch on YouTube</a>
+        </p>
+      </div>
+    </section>
 
-        <div class="packages-footer">
-          <p>
-            Not sure which option is right for you? Drop me a message and we’ll
-            build something that fits your voice, your budget and your goals.
-          </p>
-          <a href="mailto:info@sidneyspong.uk" class="btn secondary">
-            Talk about options
+    <!-- ================= PRICES ================= -->
+    <section class="section prices" id="prices">
+      <div class="container prices-grid">
+        <div class="prices-head">
+          <h2 data-reveal>
+            <span class="scribbled circled">£40
+              <svg class="scribble scribble-circle" viewBox="0 0 200 110" preserveAspectRatio="none" aria-hidden="true">
+                <g filter="url(#crayon-boil)">
+                  <path pathLength="1" d="M108 10 C 40 4, 6 30, 10 58 C 14 92, 90 104, 150 94 C 196 86, 200 42, 168 22 C 140 6, 90 6, 60 16" />
+                </g>
+              </svg>
+            </span>
+            an hour.
+          </h2>
+          <p class="lede" data-reveal>Your voice. Your goals. Your pace. Lessons in my Folkestone studio or online, and your first session is free.</p>
+          <a href="#contact" class="btn btn-ink prices-cta" data-reveal>
+            Book a free session
+            <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M6 4h6v6" /></svg></span>
           </a>
         </div>
+
+        <ul class="price-list" data-reveal>
+          <li class="price-row">
+            <div>
+              <h3>60-minute lesson</h3>
+              <p>A full session with time for technique, artistry and creative development.</p>
+              <ul class="price-points">
+                <li>Tone, range, breath and vocal control</li>
+                <li>Song interpretation and performance</li>
+                <li>Songwriting or creative coaching</li>
+                <li>Optional recording and feedback</li>
+              </ul>
+            </div>
+            <span class="price">£40</span>
+          </li>
+          <li class="price-row">
+            <div>
+              <h3>40-minute lesson</h3>
+              <p>A focused session for younger students, beginners or anyone working on a particular challenge.</p>
+              <ul class="price-points">
+                <li>Technique fundamentals and tailored warm-ups</li>
+                <li>Confidence building</li>
+                <li>Song practice and troubleshooting</li>
+              </ul>
+            </div>
+            <span class="price">£30</span>
+          </li>
+          <li class="price-row price-row-feature">
+            <div>
+              <h3>Six 60&#8209;minute lessons</h3>
+              <p>A progressive programme for consistency, focused development and time to put new skills into practice.</p>
+              <ul class="price-points">
+                <li>A personalised plan shaped around your goals</li>
+                <li>Targeted exercises between sessions</li>
+                <li>Covers or original songs developed over time</li>
+                <li>Recordings to listen back to</li>
+                <li>End-of-package reflection and next steps</li>
+              </ul>
+            </div>
+            <span class="price">£220</span>
+            <span class="hand-note save-note" aria-label="Saves £20 compared with six single lessons">save £20
+              <svg class="scribble scribble-arrow-small" viewBox="0 0 60 40" aria-hidden="true">
+                <g filter="url(#crayon-boil)"><path pathLength="1" d="M54 6 C 40 10, 22 18, 10 32" /><path pathLength="1" d="M8 18 L 9 33 L 24 32" /></g>
+              </svg>
+            </span>
+          </li>
+          <li class="price-row price-row-note">
+            <div>
+              <h3>Reduced rates</h3>
+              <p>If cost is what's stopping you, tell me. Reduced rates are available and we'll find something that works.</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- =============== TESTIMONIALS (WITH ERY PHOTO) =============== -->
-    <section id="testimonial" class="section section-light">
-      <div class="container split split-reverse">
-        <div class="split-media">
-          <figure class="testimonial-photo">
-            <img
-              src="assets/images/Ery_Profile_Pic.webp"
-              alt="Portrait of Ery"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-        </div>
-        <div class="split-text">
-          <p class="section-eyebrow">Testimonial</p>
-          <h2>“Supportive, inspiring, and really knows how to get the best out of you.”</h2>
-          <p>
-            Working with Sidney as my vocal coach has been an absolute joy. Not
-            only is he a phenomenal singer with a brilliant ear for music, but
-            he also brings a deep sense of understanding, empathy and fun to
-            every session. His musicianship is outstanding, but what really sets
-            him apart is the way he tailors his teaching to each individual.
-          </p>
-          <p>
-            Sidney creates a safe, encouraging space where you're never
-            pressured but always supported. He listens carefully to your voice,
-            helps you discover what works for you, and celebrates your progress
-            every step of the way.
-          </p>
-          <p class="testimonial-name">– Ery, 41</p>
-        </div>
+    <!-- ================= FAQ ================= -->
+    <section class="section faq" id="faq">
+      <div class="container faq-grid">
+        <h2 data-reveal>Good questions</h2>
+        <dl class="faq-list">
+          <div data-reveal>
+            <dt>Do I need any experience?</dt>
+            <dd>No. Complete beginners are very welcome. We start from where you are, build healthy technique and confidence, and move at a pace that feels right.</dd>
+          </div>
+          <div data-reveal>
+            <dt>What styles do you teach?</dt>
+            <dd>Indie, rock and alternative, pop and contemporary, jazz, musical theatre and choral. Lessons focus on what suits your voice and the music you love.</dd>
+          </div>
+          <div data-reveal>
+            <dt>Who do you teach?</dt>
+            <dd>Singers from age 12 upwards: complete beginners, indie and rock vocalists, jazz singers, musical theatre and choral performers, songwriters, and people coming back to singing after a break.</dd>
+          </div>
+          <div data-reveal>
+            <dt>Where are lessons held?</dt>
+            <dd>In my private studio in Folkestone, or online if you're further away or prefer to sing from home. I also teach at Seaview Studios.</dd>
+          </div>
+          <div data-reveal>
+            <dt>Can you help me prepare for an audition, gig or recording?</dt>
+            <dd>Yes. We can build sessions around the date: song choice, storytelling, performance and keeping your voice consistent under pressure.</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
-    <!-- =============== FAQ =============== -->
-    <section id="faq" class="section section-deep">
-      <div class="container">
-        <p class="section-eyebrow">FAQ</p>
-        <h2>Questions people often ask</h2>
-
-        <div class="faq-grid">
-          <details class="faq-item" open>
-            <summary>Do I need any experience to start?</summary>
-            <p>
-              No – complete beginners are very welcome. We’ll start from where
-              you are, build healthy technique and confidence, and move at a
-              pace that feels right for you.
-            </p>
-          </details>
-
-          <details class="faq-item">
-            <summary>What styles do you teach?</summary>
-            <p>
-              I specialise in rock, pop and contemporary styles, but I’m a
-              multi-genre performer and open to all genres. The focus is always
-              on what suits your voice and what you love to sing.
-            </p>
-          </details>
-
-          <details class="faq-item">
-            <summary>Where are lessons held?</summary>
-            <p>
-              I teach from a private studio space in Folkestone, with the option
-              of online sessions if you’re further away or prefer to work from
-              home.
-            </p>
-          </details>
-
-          <details class="faq-item">
-            <summary>Can we work on songwriting as well as singing?</summary>
-            <p>
-              Absolutely. We can combine vocal coaching with songwriting,
-              arrangement and recording support so your songs and your voice
-              grow together.
-            </p>
-          </details>
-
-          <details class="faq-item">
-            <summary>Can you help me prepare for an audition or recording?</summary>
-            <p>
-              Yes – we can focus sessions around auditions, gigs or studio
-              dates, working on song choice, storytelling, performance and vocal
-              consistency under pressure.
-            </p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- =============== CONTACT =============== -->
-    <section id="contact" class="section section-dark">
+    <!-- ================= CONTACT ================= -->
+    <section class="section contact" id="contact">
       <div class="container contact-grid">
-        <div>
-          <p class="section-eyebrow">Contact</p>
-          <h2>Ready to find your voice?</h2>
-          <p>
-            Email me with a bit about you, your experience (if any), and what
-            you’d like to work on. We’ll arrange a free first session and see
-            what we can build together.
-          </p>
-          <p class="contact-email">
-            <a href="mailto:info@sidneyspong.uk">info@sidneyspong.uk</a>
-          </p>
+        <div class="contact-copy">
+          <h2 data-reveal>Ready to explore what your voice can do?</h2>
+          <p class="lede" data-reveal>Whether you're completely new to singing or working towards your next performance, I'd love to hear what you're hoping to achieve.</p>
+          <ol class="steps" data-reveal>
+            <li><strong>Send a message</strong><span>Tell me a little about you and your voice.</span></li>
+            <li><strong>I'll reply to find a time</strong><span>In my Folkestone studio or online, whichever suits you.</span></li>
+            <li><strong>Your free first session</strong><span>We'll talk about your goals and start singing.</span></li>
+          </ol>
+          <div class="email-direct" data-reveal>
+            <span>Or email me directly</span>
+            <a href="mailto:info@sidneyspong.uk" class="email-link">info@sidneyspong.uk</a>
+            <button type="button" class="copy-btn" data-copy="info@sidneyspong.uk">Copy</button>
+          </div>
+          <a class="insta-link" href="https://www.instagram.com/sidney.spong/" target="_blank" rel="noopener" data-reveal>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4.2" /><circle cx="17.4" cy="6.6" r="1.1" class="dot" /></svg>
+            <span>Follow along on Instagram <strong>@sidney.spong</strong></span>
+          </a>
         </div>
-        <form
-          class="contact-form"
-          action="mailto:info@sidneyspong.uk"
-          method="post"
-          enctype="text/plain"
-        >
-          <label>
-            Name
-            <input type="text" name="name" required />
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" required />
-          </label>
-          <label>
-            Tell me about your voice & goals
-            <textarea name="message" rows="4" required></textarea>
-          </label>
-          <button type="submit" class="btn primary">Send message</button>
+
+        <form class="contact-form" id="contact-form" novalidate data-reveal>
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required />
+            <p class="field-error" id="f-name-error" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" required />
+            <p class="field-error" id="f-email-error" aria-live="polite"></p>
+          </div>
+          <fieldset class="field">
+            <legend>Where would you like lessons?</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="format" value="In person, Folkestone" checked /><span>In Folkestone</span></label>
+              <label class="chip"><input type="radio" name="format" value="Online" /><span>Online</span></label>
+              <label class="chip"><input type="radio" name="format" value="Not sure yet" /><span>Not sure yet</span></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="f-message">About you and your voice</label>
+            <textarea id="f-message" name="message" rows="5" required></textarea>
+            <p class="field-help">Any experience, what you love to sing, what you'd like to get better at.</p>
+            <p class="field-error" id="f-message-error" aria-live="polite"></p>
+          </div>
+          <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="submit-row">
+            <button type="submit" class="btn btn-ink btn-block">
+              <span class="btn-label">Send message</span>
+              <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M6 4h6v6" /></svg></span>
+            </button>
+            <p class="hand-note contact-note" aria-hidden="true">
+              say hi
+              <svg class="scribble scribble-arrow" viewBox="0 0 64 40">
+                <g filter="url(#crayon-boil)"><path pathLength="1" d="M4 8 C 24 2, 44 10, 56 26" /><path pathLength="1" d="M42 26 L 57 28 L 58 13" /></g>
+              </svg>
+            </p>
+          </div>
+          <p class="form-status" role="status" aria-live="polite"></p>
+          <p class="form-privacy">Your details are only used to reply to you. No mailing lists, no spam.</p>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- =============== FOOTER =============== -->
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Sidney Spong · Vocal Coaching</p>
-      <p class="footer-small">
-        Based in Folkestone · In-person & online.
-      </p>
+      <a href="#top" class="wordmark" translate="no">Sidney Spong</a>
+      <p>Vocal coaching in Folkestone &amp; online</p>
+      <a href="https://www.instagram.com/sidney.spong/" target="_blank" rel="noopener">Instagram</a>
+      <p>© <span data-year>2026</span> Sidney Spong</p>
+      <button type="button" class="motion-toggle" aria-pressed="false">Pause animations</button>
     </div>
   </footer>
 
-<!-- =============== JS: NAV + CAROUSEL =============== -->
-<script>
-  // Safe query helper
-  const $ = (sel, ctx = document) => ctx.querySelector(sel);
-
-  // Mobile nav toggle
-  (function setupNav() {
-    const navToggle = $(".nav-toggle");
-    const nav = $(".main-nav");
-    if (!navToggle || !nav) return;
-
-    navToggle.addEventListener("click", () => {
-      const open = nav.classList.toggle("open");
-      navToggle.classList.toggle("open", open);
-      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-  })();
-
-  // Carousel: show/hide slides and keep container tall
-  (function setupCarousel() {
-    const carouselWindow = document.querySelector(".carousel-window");
-    const slides = Array.from(document.querySelectorAll(".carousel-slide"));
-    const dots = Array.from(document.querySelectorAll(".carousel-dots .dot"));
-    const prevBtn = document.querySelector(".carousel-btn.prev");
-    const nextBtn = document.querySelector(".carousel-btn.next");
-    if (!carouselWindow || !slides.length) return;
-
-    // Set a target height so images are tall and consistent,
-    // but don't create huge dead space on mobile.
-    function setCarouselHeight() {
-      const w = window.innerWidth;
-      const vh = window.innerHeight;
-
-      // Desktop/tablet: keep your taller look
-      if (w >= 768) {
-        const max = 800; // px cap; adjust to taste
-        const height = Math.min(Math.round(vh * 0.60), max);
-        carouselWindow.style.height = height + "px";
-        return;
-      }
-
-      // Mobile: shorter so arrows/dots sit near the image (no massive gap)
-      const min = 260;
-      const max = 420;
-      const height = Math.max(min, Math.min(Math.round(vh * 0.38), max));
-      carouselWindow.style.height = height + "px";
-    }
-
-    // Recalc height when images load
-    const imgs = Array.from(carouselWindow.querySelectorAll("img"));
-    imgs.forEach((img) => {
-      if (!img.complete) img.addEventListener("load", setCarouselHeight);
-    });
-
-    // Initial size and on resize
-    setCarouselHeight();
-    window.addEventListener("resize", setCarouselHeight);
-
-    let currentIndex = slides.findIndex((s) => s.classList.contains("active"));
-    if (currentIndex < 0) currentIndex = 0;
-
-    function showSlide(index) {
-      currentIndex = (index + slides.length) % slides.length;
-      slides.forEach((s, i) => s.classList.toggle("active", i === currentIndex));
-      dots.forEach((d, i) => {
-        d.classList.toggle("active", i === currentIndex);
-        d.setAttribute("aria-selected", i === currentIndex ? "true" : "false");
-      });
-    }
-
-    if (prevBtn) prevBtn.addEventListener("click", () => showSlide(currentIndex - 1));
-    if (nextBtn) nextBtn.addEventListener("click", () => showSlide(currentIndex + 1));
-    dots.forEach((dot, i) => dot.addEventListener("click", () => showSlide(i)));
-
-    // keyboard support for the carousel-track
-    const track = document.querySelector(".carousel-track");
-    if (track) {
-      track.setAttribute("tabindex", "0");
-      track.addEventListener("keydown", (e) => {
-        if (e.key === "ArrowLeft") showSlide(currentIndex - 1);
-        if (e.key === "ArrowRight") showSlide(currentIndex + 1);
-      });
-    }
-
-    // autoplay with pause on hover/focus
-    let interval = setInterval(() => showSlide(currentIndex + 1), 6000);
-    const root = document.querySelector(".photo-carousel");
-    if (root) {
-      const pause = () => clearInterval(interval);
-      const resume = () => {
-        clearInterval(interval);
-        interval = setInterval(() => showSlide(currentIndex + 1), 6000);
-      };
-
-      root.addEventListener("mouseenter", pause);
-      root.addEventListener("focusin", pause);
-      root.addEventListener("mouseleave", resume);
-      root.addEventListener("focusout", resume);
-    }
-  })();
-
-  // Footer year
-  (function setYear() {
-    const yearSpan = document.getElementById("year");
-    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-  })();
-</script>
-<script src="assets/js/parallax.js"></script>
+  <script src="assets/js/site.js" defer></script>
 </body>
 </html>

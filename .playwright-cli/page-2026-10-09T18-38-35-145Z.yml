@@ -1,0 +1,172 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#top"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Sidney Spong · Home" [ref=e5] [cursor=pointer]:
+        - /url: "#top"
+        - img "Sidney Spong Logo" [ref=e6]
+      - heading "Sidney Spong · Vocal Coaching & Artist Development" [level=1] [ref=e7]
+      - navigation "Primary" [ref=e8]:
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: "#about"
+        - link "Vocal Coaching" [ref=e10] [cursor=pointer]:
+          - /url: "#skills"
+        - link "Lesson Packages" [ref=e11] [cursor=pointer]:
+          - /url: "#packages"
+        - link "Testimonials" [ref=e12] [cursor=pointer]:
+          - /url: "#testimonial"
+        - link "FAQ" [ref=e13] [cursor=pointer]:
+          - /url: "#faq"
+        - link "Book a session" [ref=e14] [cursor=pointer]:
+          - /url: "#contact"
+  - main [ref=e15]:
+    - generic [ref=e17]:
+      - img "Microphone illustration" [ref=e19]
+      - generic [ref=e20]:
+        - generic [ref=e21]: Folkestone · In-person & online vocal coaching
+        - img "Find your voice, discover your sound" [ref=e23]
+        - paragraph [ref=e24]: Vocal coaching · Performance training · Songwriting & artist development.
+        - list [ref=e25]:
+          - listitem [ref=e26]: •Supportive, confidence-building sessions
+          - listitem [ref=e27]: •Technique, tone & creative expression
+          - listitem [ref=e28]: •For all levels – beginners to advanced
+        - generic [ref=e29]:
+          - link "Email for a free first session" [ref=e30] [cursor=pointer]:
+            - /url: mailto:info@sidneyspong.uk
+          - link "View lesson packages" [ref=e31] [cursor=pointer]:
+            - /url: "#packages"
+    - generic [ref=e32]:
+      - img "Sidney Spong performing live" [ref=e34]
+      - paragraph [ref=e36]: Live performance, storytelling, and real-world experience in every session.
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - paragraph [ref=e40]: About me
+        - heading "Hi, I’m Sidney." [level=2] [ref=e41]
+        - paragraph [ref=e42]: I’m a vocalist, songwriter and actor based in Folkestone. I’ve spent years performing across the UK – on stage, on TV and radio, and in bands and studio sessions. Music isn’t just something I do; it’s the world I live in every day.
+        - paragraph [ref=e43]: I’ve trained with leading vocal coaches including Kate Cameron, Gareth Malone, Nicola Palmer and ILĀ. Their guidance helped me build a technique that’s expressive, flexible and rooted in real artistry, not rigid rules.
+        - paragraph [ref=e44]: In lessons, I bring all of that experience into the room – whether we’re strengthening your voice, shaping a song, or preparing for a performance or studio session.
+        - list [ref=e45]:
+          - listitem [ref=e46]: Grade 8 vocalist, multi-genre and texture-focused
+          - listitem [ref=e47]: Experience teaching all ages and levels
+          - listitem [ref=e48]: Private studio with pro recording equipment
+      - generic [ref=e50]:
+        - generic [ref=e52]:
+          - img "Sidney singing live 1" [ref=e54]
+          - generic:
+            - img "Sidney singing live 2"
+          - generic:
+            - img "Sidney singing live 3"
+          - generic:
+            - img "Sidney singing live 4"
+          - generic:
+            - img "Sidney singing live 5"
+        - generic [ref=e55]:
+          - button "Previous image" [ref=e56] [cursor=pointer]: ‹
+          - button "Next image" [ref=e57] [cursor=pointer]: ›
+        - tablist "Carousel thumbnails" [ref=e58]:
+          - button "Slide 1" [ref=e59]
+          - button "Slide 2" [ref=e60]
+          - button "Slide 3" [ref=e61]
+          - button "Slide 4" [ref=e62]
+          - button "Slide 5" [ref=e63]
+    - generic [ref=e65]:
+      - generic [ref=e66]:
+        - paragraph [ref=e67]: Vocal coaching & artist development
+        - heading "What we can work on together" [level=2] [ref=e68]
+        - paragraph [ref=e69]: Sessions are tailored to you. We can stay purely with vocal technique, or weave in songwriting, performance and recording to build you as a complete artist.
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - heading "Technique & tone" [level=3] [ref=e73]
+          - paragraph [ref=e74]: Breath support, vocal closure, mix, range, texture and stamina – all approached in a way that fits your voice, not a one-size-fits-all method.
+        - generic [ref=e75]:
+          - heading "Performance & confidence" [level=3] [ref=e76]
+          - paragraph [ref=e77]: Storytelling, stage presence, audition prep and managing nerves, with tools you can take into gigs, shows or studio sessions.
+        - generic [ref=e78]:
+          - heading "Songwriting & recording" [level=3] [ref=e79]
+          - paragraph [ref=e80]: Lyrics, melody, structure and arrangement, plus support for recording vocals so what you hear back finally matches how you feel.
+    - generic [ref=e82]:
+      - paragraph [ref=e83]: Lesson packages
+      - heading "Flexible options for your voice and your schedule" [level=2] [ref=e84]
+      - generic [ref=e85]:
+        - article [ref=e86]:
+          - heading "Single 40-minute session" [level=3] [ref=e87]
+          - paragraph [ref=e88]: £30
+          - paragraph [ref=e89]: Perfect for younger students, beginners or focused check-ins.
+          - list [ref=e90]:
+            - listitem [ref=e91]: Technique basics and healthy habits
+            - listitem [ref=e92]: Warm-ups tailored to your voice
+            - listitem [ref=e93]: Confidence building
+            - listitem [ref=e94]: Song practice or troubleshooting
+        - article [ref=e95]:
+          - heading "Single 60-minute session" [level=3] [ref=e96]
+          - paragraph [ref=e97]: £40
+          - paragraph [ref=e98]: A full vocal coaching session with space to explore technique and artistry.
+          - list [ref=e99]:
+            - listitem [ref=e100]: Technique, tone, range & control
+            - listitem [ref=e101]: Song interpretation & expression
+            - listitem [ref=e102]: Creative coaching (songwriting or performance)
+            - listitem [ref=e103]: Optional recording and feedback
+        - article [ref=e104]:
+          - generic [ref=e105]: Most popular
+          - heading "6 × 60-minute sessions" [level=3] [ref=e106]
+          - paragraph [ref=e107]: £220
+          - paragraph [ref=e108]: A structured, progressive programme for consistent growth and clear results.
+          - list [ref=e109]:
+            - listitem [ref=e110]: Personalised plan based on your goals
+            - listitem [ref=e111]: Weekly warm-ups & targeted technique training
+            - listitem [ref=e112]: Song development over time (cover or original)
+            - listitem [ref=e113]: Session recordings for self-review
+            - listitem [ref=e114]: End-of-package reflection & next-steps plan
+      - generic [ref=e115]:
+        - paragraph [ref=e116]: Not sure which option is right for you? Drop me a message and we’ll build something that fits your voice, your budget and your goals.
+        - link "Talk about options" [ref=e117] [cursor=pointer]:
+          - /url: mailto:info@sidneyspong.uk
+    - generic [ref=e119]:
+      - generic:
+        - figure:
+          - img "Portrait of Ery"
+      - generic [ref=e120]:
+        - paragraph [ref=e121]: Testimonial
+        - heading "“Supportive, inspiring, and really knows how to get the best out of you.”" [level=2] [ref=e122]
+        - paragraph [ref=e123]: Working with Sidney as my vocal coach has been an absolute joy. Not only is he a phenomenal singer with a brilliant ear for music, but he also brings a deep sense of understanding, empathy and fun to every session. His musicianship is outstanding, but what really sets him apart is the way he tailors his teaching to each individual.
+        - paragraph [ref=e124]: Sidney creates a safe, encouraging space where you're never pressured but always supported. He listens carefully to your voice, helps you discover what works for you, and celebrates your progress every step of the way.
+        - paragraph [ref=e125]: – Ery, 41
+    - generic [ref=e127]:
+      - paragraph [ref=e128]: FAQ
+      - heading "Questions people often ask" [level=2] [ref=e129]
+      - generic [ref=e130]:
+        - group [ref=e131]:
+          - generic "Do I need any experience to start? –" [ref=e132] [cursor=pointer]
+          - paragraph [ref=e133]: No – complete beginners are very welcome. We’ll start from where you are, build healthy technique and confidence, and move at a pace that feels right for you.
+        - group [ref=e134]:
+          - generic "What styles do you teach? +" [ref=e135] [cursor=pointer]
+        - group [ref=e136]:
+          - generic "Where are lessons held? +" [ref=e137] [cursor=pointer]
+        - group [ref=e138]:
+          - generic "Can we work on songwriting as well as singing? +" [ref=e139] [cursor=pointer]
+        - group [ref=e140]:
+          - generic "Can you help me prepare for an audition or recording? +" [ref=e141] [cursor=pointer]
+    - generic [ref=e143]:
+      - generic [ref=e144]:
+        - paragraph [ref=e145]: Contact
+        - heading "Ready to find your voice?" [level=2] [ref=e146]
+        - paragraph [ref=e147]: Email me with a bit about you, your experience (if any), and what you’d like to work on. We’ll arrange a free first session and see what we can build together.
+        - paragraph [ref=e148]:
+          - link "info@sidneyspong.uk" [ref=e149] [cursor=pointer]:
+            - /url: mailto:info@sidneyspong.uk
+      - generic [ref=e150]:
+        - generic [ref=e151]:
+          - text: Name
+          - textbox "Name" [ref=e152]
+        - generic [ref=e153]:
+          - text: Email
+          - textbox "Email" [ref=e154]
+        - generic [ref=e155]:
+          - text: Tell me about your voice & goals
+          - textbox "Tell me about your voice & goals" [ref=e156]
+        - button "Send message" [ref=e157] [cursor=pointer]
+  - contentinfo [ref=e158]:
+    - generic [ref=e159]:
+      - paragraph [ref=e160]: © 2026 Sidney Spong · Vocal Coaching
+      - paragraph [ref=e161]: Based in Folkestone · In-person & online.
