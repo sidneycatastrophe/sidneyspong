@@ -134,17 +134,6 @@
     });
   }
 
-  /* ---------- Gallery: duplicate the strip so the desktop drift loops seamlessly ---------- */
-  var track = document.querySelector(".gallery-track");
-  if (track) {
-    Array.prototype.slice.call(track.children).forEach(function (fig) {
-      var clone = fig.cloneNode(true);
-      clone.setAttribute("aria-hidden", "true");
-      clone.classList.add("is-clone");
-      track.appendChild(clone);
-    });
-  }
-
   /* ---------- Lessons: crossfade the sticky photo to match the lesson in view ---------- */
   var lessonItems = document.querySelectorAll("[data-lesson]");
   var stageImgs = document.querySelectorAll(".lesson-stage img");
