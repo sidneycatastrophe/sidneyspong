@@ -113,6 +113,13 @@
         if (!entry.isIntersecting) return;
         entry.target.classList.add("is-in");
         if (entry.target.classList.contains("scribble")) drawScribble(entry.target);
+        // Lesson cards sit side by side in a swipe row on phones: reveal them together
+        if (entry.target.hasAttribute("data-lesson")) {
+          Array.prototype.forEach.call(entry.target.parentElement.children, function (li) {
+            li.classList.add("is-in");
+            revealObserver.unobserve(li);
+          });
+        }
         revealObserver.unobserve(entry.target);
       });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
