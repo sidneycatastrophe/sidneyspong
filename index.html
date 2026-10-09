@@ -30,7 +30,8 @@
     "email": "info@sidneyspong.uk",
     "image": "https://sidneyspong.uk/assets/images/og-image.jpg",
     "address": { "@type": "PostalAddress", "addressLocality": "Folkestone", "addressCountry": "GB" },
-    "priceRange": "£30–£220"
+    "priceRange": "£30–£220",
+    "sameAs": ["https://www.instagram.com/sidney.spong/"]
   }
   </script>
 </head>
@@ -220,24 +221,32 @@
       <div class="container lessons-grid">
         <div class="lessons-head">
           <h2 data-reveal>What we'll work on</h2>
-          <p class="lede" data-reveal>Every lesson is built around your voice. Stay purely with technique, or bring in songwriting, performance and recording.</p>
+          <p class="lede" data-reveal>Singing, performing and songwriting. Stay purely with technique, or bring in the rest to build you as a complete artist.</p>
+          <div class="lesson-stage" aria-hidden="true">
+            <img class="is-active" data-for="1" src="assets/images/photos/golden-mic-720.webp" width="480" height="720" loading="lazy" decoding="async" alt="" />
+            <img data-for="2" src="assets/images/photos/beach-band-960.webp" width="960" height="720" loading="lazy" decoding="async" alt="" />
+            <img data-for="3" src="assets/images/photos/piano-back-720.webp" width="720" height="480" loading="lazy" decoding="async" alt="" />
+          </div>
         </div>
         <ol class="lesson-list">
-          <li data-reveal>
+          <li data-reveal data-lesson="1" class="is-active">
+            <figure class="lesson-photo"><img src="assets/images/photos/golden-mic-720.webp" width="480" height="720" loading="lazy" decoding="async" alt="Sidney singing into a microphone in warm stage light" /></figure>
             <span class="num" aria-hidden="true">01</span>
             <div>
               <h3>Technique &amp; tone</h3>
               <p>Breath support, vocal closure, mix, range, texture and stamina, approached in a way that fits your voice rather than a one-size-fits-all method.</p>
             </div>
           </li>
-          <li data-reveal>
+          <li data-reveal data-lesson="2">
+            <figure class="lesson-photo"><img src="assets/images/photos/beach-band-960.webp" width="960" height="720" loading="lazy" decoding="async" alt="Sidney fronting a four-piece band on Sunny Sands beach, Folkestone" /></figure>
             <span class="num" aria-hidden="true">02</span>
             <div>
               <h3>Performance &amp; confidence</h3>
               <p>Storytelling, stage presence, audition prep and managing nerves, with tools you can take into gigs, shows and studio sessions.</p>
             </div>
           </li>
-          <li data-reveal>
+          <li data-reveal data-lesson="3">
+            <figure class="lesson-photo"><img src="assets/images/photos/piano-back-720.webp" width="720" height="480" loading="lazy" decoding="async" alt="Sidney singing at an upright piano in a candlelit room" /></figure>
             <span class="num" aria-hidden="true">03</span>
             <div>
               <h3>Songwriting &amp; recording</h3>
@@ -256,10 +265,33 @@
           <figure class="g g-wide"><img src="assets/images/photos/crowd-blur-a-960.webp" width="960" height="641" loading="lazy" decoding="async" alt="Rooftop crowd blurred in motion as Sidney's band plays by the sea" /></figure>
           <figure class="g g-tall"><img src="assets/images/photos/stage-pink-720.webp" width="480" height="720" loading="lazy" decoding="async" alt="Sidney singing in front of a pink-lit screen with a drummer behind" /></figure>
           <figure class="g g-wide"><img src="assets/images/photos/piano-shout-720.webp" width="720" height="479" loading="lazy" decoding="async" alt="Sidney belting at the keyboard" /></figure>
-          <figure class="g g-tall"><img src="assets/images/photos/golden-mic-720.webp" width="480" height="720" loading="lazy" decoding="async" alt="Sidney singing in warm golden stage light" /></figure>
           <figure class="g g-wide"><img src="assets/images/photos/crowd-blur-b-960.webp" width="960" height="641" loading="lazy" decoding="async" alt="Sidney playing guitar on a seaside rooftop, crowd in the foreground" /></figure>
           <figure class="g g-tall"><img src="assets/images/photos/acoustic-720.webp" width="495" height="720" loading="lazy" decoding="async" alt="Sidney singing with an acoustic guitar" /></figure>
         </div>
+      </div>
+    </section>
+
+    <!-- ================= WATCH ================= -->
+    <section class="section watch" id="watch">
+      <div class="container">
+        <div class="watch-head">
+          <h2 data-reveal>Hear me in action</h2>
+          <p class="lede" data-reveal>Singing with Oscar the Band on &ldquo;China Bird&rdquo;, filmed on Sunny Sands in Folkestone. Strong technique, a song that means something, and a performance that holds up in the open air: the things we work on in lessons.</p>
+        </div>
+        <div class="video" data-video="8S89s0-R7yM" data-reveal>
+          <button type="button" class="video-play" aria-label="Play the China Bird music video by Oscar the Band">
+            <img src="assets/images/photos/beach-band-960.webp"
+                 srcset="assets/images/photos/beach-band-960.webp 960w, assets/images/photos/beach-band-1600.webp 1600w"
+                 sizes="(min-width: 1300px) 1240px, 100vw" width="1600" height="1200" loading="lazy" decoding="async" alt="" />
+            <span class="video-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" /></svg>
+            </span>
+            <span class="video-caption" aria-hidden="true">Oscar the Band · China Bird</span>
+          </button>
+        </div>
+        <p class="video-note" data-reveal>
+          Plays from YouTube. <a href="https://www.youtube.com/watch?v=8S89s0-R7yM" target="_blank" rel="noopener">Watch on YouTube</a>
+        </p>
       </div>
     </section>
 
@@ -380,6 +412,10 @@
             <a href="mailto:info@sidneyspong.uk" class="email-link">info@sidneyspong.uk</a>
             <button type="button" class="copy-btn" data-copy="info@sidneyspong.uk">Copy</button>
           </div>
+          <a class="insta-link" href="https://www.instagram.com/sidney.spong/" target="_blank" rel="noopener" data-reveal>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4.2" /><circle cx="17.4" cy="6.6" r="1.1" class="dot" /></svg>
+            <span>Follow along on Instagram <strong>@sidney.spong</strong></span>
+          </a>
           <p class="hand-note contact-note" aria-hidden="true">
             say hi
             <svg class="scribble scribble-arrow" viewBox="0 0 90 70">
@@ -428,6 +464,7 @@
     <div class="container footer-inner">
       <a href="#top" class="wordmark" translate="no">Sidney Spong</a>
       <p>Vocal coaching in Folkestone &amp; online</p>
+      <a href="https://www.instagram.com/sidney.spong/" target="_blank" rel="noopener">Instagram</a>
       <p>© <span data-year>2026</span> Sidney Spong</p>
       <button type="button" class="motion-toggle" aria-pressed="false">Pause animations</button>
     </div>

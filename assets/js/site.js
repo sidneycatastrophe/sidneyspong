@@ -3,10 +3,11 @@
 
   /* ------------------------------------------------------------------
      Contact form delivery.
-     Paste a free Web3Forms access key here (web3forms.com, sign up with
-     info@sidneyspong.uk) and messages arrive straight in that inbox.
+     Paste a free Web3Forms access key here (web3forms.com). The key is tied
+     to the inbox you sign up with, so using the personal Gmail delivers
+     straight there without relying on Cloudflare's email forwarding.
      While it's empty, "Send message" opens the visitor's email app with
-     everything pre-filled instead.
+     everything pre-filled, addressed to CONTACT_EMAIL.
      ------------------------------------------------------------------ */
   var WEB3FORMS_ACCESS_KEY = "";
   var CONTACT_EMAIL = "info@sidneyspong.uk";
@@ -143,6 +144,37 @@
       track.appendChild(clone);
     });
   }
+
+  /* ---------- Lessons: crossfade the sticky photo to match the lesson in view ---------- */
+  var lessonItems = document.querySelectorAll("[data-lesson]");
+  var stageImgs = document.querySelectorAll(".lesson-stage img");
+  if (lessonItems.length && "IntersectionObserver" in window) {
+    var lessonObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var id = entry.target.getAttribute("data-lesson");
+        Array.prototype.forEach.call(lessonItems, function (li) { li.classList.toggle("is-active", li === entry.target); });
+        Array.prototype.forEach.call(stageImgs, function (img) { img.classList.toggle("is-active", img.getAttribute("data-for") === id); });
+      });
+    }, { rootMargin: "-22% 0px -66% 0px" });
+    Array.prototype.forEach.call(lessonItems, function (li) { lessonObserver.observe(li); });
+  }
+
+  /* ---------- Video: load YouTube only when someone presses play ---------- */
+  document.querySelectorAll("[data-video]").forEach(function (box) {
+    var btn = box.querySelector(".video-play");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var iframe = document.createElement("iframe");
+      iframe.src = "https://www.youtube-nocookie.com/embed/" + box.getAttribute("data-video") + "?autoplay=1&rel=0&playsinline=1";
+      iframe.title = btn.getAttribute("aria-label").replace(/^Play the /, "");
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.allowFullscreen = true;
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      box.replaceChild(iframe, btn);
+      iframe.focus();
+    });
+  });
 
   /* ---------- Copy email ---------- */
   document.querySelectorAll("[data-copy]").forEach(function (btn) {

@@ -16,6 +16,13 @@ by email. While empty, submitting opens the visitor's email app with the message
 
 Reviews: copy a `<figure class="review">` block in the `#reviews` section; the first stays featured.
 
+Video: `#watch` shows a poster image and only loads YouTube (nocookie) when pressed; the video ID
+lives in `data-video`. Lessons: each `[data-lesson]` row has an inline photo (mobile) and a matching
+`.lesson-stage img[data-for]` (desktop sticky crossfade); keep them in sync.
+
+Hosting/email: domain is on Cloudflare; info@sidneyspong.uk is meant to forward to the owner's
+Gmail via Cloudflare Email Routing.
+
 ## Design skills (`.claude/skills/`, pinned in `skills-lock.json`)
 - `redesign-existing-projects`, `design-taste-frontend`, `high-end-visual-design` (Leonxlnx/taste-skill)
 - `web-design-guidelines` (vercel-labs/agent-skills): audit against Vercel's Web Interface Guidelines
