@@ -301,7 +301,7 @@
           if (!result.ok) throw new Error(result.json && result.json.message);
           form.reset();
           Object.keys(rules).forEach(function (n) { form.elements[n].removeAttribute("aria-invalid"); });
-          setStatus("success", "Thanks, " + data.name.split(" ")[0] + ". Your message is on its way and I'll be in touch soon.");
+          setStatus("success", "Thanks, " + data.name.split(" ")[0] + ". Your message is on its way. I usually reply within a day.");
         })
         .catch(function () {
           setStatus("error",
