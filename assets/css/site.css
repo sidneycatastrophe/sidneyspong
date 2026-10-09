@@ -521,109 +521,30 @@ html:not(.js) .mic .mic-cable { stroke-dashoffset: 0; }
   .about-photos { padding-right: 18%; }
 }
 
-/* ---------- Lessons ---------- */
+/* ---------- What I offer ---------- */
 .lessons { background: var(--paper-2); }
-.lessons-grid { display: grid; gap: 56px; }
-.lesson-list { display: grid; margin: 0; padding: 0; list-style: none; }
-.lesson-list li {
+.lessons-head { max-width: 760px; }
+.offer-grid { display: grid; gap: 0 48px; margin: 48px 0 0; padding: 0; list-style: none; }
+.offer-grid li {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 20px;
-  padding-block: 32px;
+  grid-template-columns: 52px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding-block: 28px;
   border-top: 1px solid var(--line);
 }
-.lesson-list li:last-child { border-bottom: 1px solid var(--line); }
-.lesson-list .num {
-  font-family: var(--font-hand);
-  font-size: 1.75rem;
-  line-height: 1;
-  color: var(--crayon);
-  min-width: 2.2ch;
-}
-.lesson-list p { margin-top: 10px; color: var(--ink-2); max-width: 52ch; }
+.offer-icon { width: 52px; height: 52px; }
+.offer-icon path { stroke-width: 3.6; }
+.offer-grid p { margin-top: 8px; color: var(--ink-2); max-width: 52ch; }
 
-/* Mobile: each lesson carries its own photo. Desktop: one sticky stage that crossfades. */
-.lesson-photo {
-  grid-column: 1 / -1;
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--r-lg);
-  background: var(--paper);
-  margin-bottom: 4px;
+@media (min-width: 720px) {
+  .offer-grid { grid-template-columns: 1fr 1fr; }
 }
-.lesson-photo img { width: 100%; height: 100%; object-fit: cover; }
-.lesson-list li[data-lesson="1"] .lesson-photo img { object-position: 50% 25%; }
-.lesson-list li[data-lesson="6"] .lesson-photo img { object-position: 50% 4%; }
-.lesson-stage { display: none; }
-.swipe-meta { display: flex; align-items: baseline; justify-content: space-between; margin-top: 22px; }
-.swipe-meta .hand-note { font-size: 1.35rem; transform: rotate(-3deg); transform-origin: left; }
-.lesson-count { font-size: 0.9375rem; font-weight: 560; color: var(--mute); font-variant-numeric: tabular-nums; }
-.lesson-count [data-lesson-count] { color: var(--ink); }
-.lesson-progress { height: 3px; margin-top: 8px; border-radius: 3px; background: var(--line); overflow: hidden; }
-.lesson-progress span { display: block; height: 100%; width: 100%; border-radius: 3px; background: var(--crayon); transform: scaleX(0.1667); transform-origin: left; transition: transform 0.25s var(--ease-out); }
-
-@media (max-width: 959px) {
-  .lesson-list {
-    display: flex;
-    gap: 12px;
-    margin-inline: calc(var(--gutter) * -1);
-    padding: 4px var(--gutter) 16px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: var(--gutter);
-    scrollbar-width: none;
-  }
-  .lesson-list::-webkit-scrollbar { display: none; }
-  .lesson-list li,
-  .lesson-list li:last-child {
-    flex: 0 0 min(84%, 360px);
-    scroll-snap-align: start;
-    align-content: start;
-    gap: 14px 12px;
-    padding: 10px 10px 24px;
-    border: 0;
-    border-radius: var(--r-lg);
-    background: #fff;
-    box-shadow: 0 18px 40px -32px rgba(22, 23, 26, 0.35);
-  }
-  .lesson-list li > div { padding-right: 12px; }
-  .lesson-list .num { padding-left: 12px; }
-  .lesson-photo { border-radius: 16px; margin-bottom: 6px; }
-  .lesson-list p { font-size: 0.98rem; }
-}
-
-@media (min-width: 960px) {
-  .lessons-grid { grid-template-columns: 0.85fr 1.15fr; gap: 96px; align-items: start; }
-  .lessons-head { position: sticky; top: 120px; }
-  .lesson-photo { display: none; }
-  .lesson-stage {
-    display: block;
-    position: relative;
-    margin-top: 40px;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    border-radius: var(--r-lg);
-    background: var(--paper);
-    box-shadow: 0 30px 60px -40px rgba(22, 23, 26, 0.45);
-  }
-  .lesson-stage img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transform: scale(1.06);
-    transition: opacity 0.7s var(--ease-out), transform 1.2s var(--ease-out);
-  }
-  .lesson-stage img[data-for="1"] { object-position: 50% 25%; }
-  .lesson-stage img[data-for="6"] { object-position: 50% 4%; }
-  .lesson-stage img.is-active { opacity: 1; transform: none; }
-  .swipe-meta, .lesson-progress { display: none; }
-  .lesson-list li { gap: 40px; padding-block: 40px; min-height: min(32vh, 290px); align-content: center; }
-  .js .lesson-list li > :not(.lesson-photo) { transition: opacity 0.5s var(--ease-out); }
-  .js .lesson-list li:not(.is-active) > :not(.lesson-photo) { opacity: 0.5; }
-  .lesson-list h3 { font-size: 1.625rem; }
+@media (min-width: 1080px) {
+  .offer-grid { grid-template-columns: repeat(3, 1fr); gap: 0 56px; margin-top: 64px; }
+  .offer-grid li { grid-template-columns: 1fr; gap: 22px; padding-block: 36px 44px; }
+  .offer-icon { width: 60px; height: 60px; }
+  .offer-grid h3 { font-size: 1.375rem; }
 }
 
 /* ---------- How I teach ---------- */
@@ -648,9 +569,14 @@ html:not(.js) .mic .mic-cable { stroke-dashoffset: 0; }
   text-wrap: balance;
 }
 .manifesto .scribble-underline { bottom: -0.1em; }
+.manifesto-row { display: grid; gap: 40px; margin-top: clamp(72px, 11vw, 136px); align-items: center; }
+.manifesto-row .manifesto { margin-top: 0; }
+.manifesto-photo { aspect-ratio: 3 / 2; box-shadow: 0 30px 60px -40px rgba(22, 23, 26, 0.45); }
 @media (min-width: 960px) {
   .teach-grid { grid-template-columns: 1.25fr 0.75fr; gap: 96px; align-items: start; }
   .teach-expect { padding: 36px 32px; margin-top: 12px; }
+  .manifesto-row { grid-template-columns: 1.05fr 0.95fr; gap: 72px; }
+  .manifesto-row .manifesto { font-size: clamp(2.25rem, 3.6vw, 3.5rem); }
 }
 
 /* ---------- Watch ---------- */
