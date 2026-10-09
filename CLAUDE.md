@@ -1,6 +1,20 @@
 # sidneyspong.com
 
-Static single-page site: `index.html` + `assets/`. No build step.
+Static single-page site, no build step:
+- `index.html`: all content
+- `assets/css/site.css`: styles (mobile-first, design tokens on `:root`)
+- `assets/js/site.js`: menu, scroll reveals, crayon scribble drawing, contact form
+- `assets/images/photos/`: web-sized `.webp` photos (make new ones ~720/1280px wide, quality ~74)
+- `assets/fonts/`: self-hosted Geist + Caveat Brush (no Google Fonts requests)
+
+Design: off-white paper, near-black ink, ONE accent (crayon cobalt `#2747d0`). Hand-drawn
+"crayon" scribbles are inline SVGs using the shared `#crayon-boil` filter; strokes with
+`pathLength="1"` are drawn on by site.js when scrolled into view.
+
+Contact form: set `WEB3FORMS_ACCESS_KEY` at the top of `assets/js/site.js` to deliver messages
+by email. While empty, submitting opens the visitor's email app with the message pre-filled.
+
+Reviews: copy a `<figure class="review">` block in the `#reviews` section; the first stays featured.
 
 ## Design skills (`.claude/skills/`, pinned in `skills-lock.json`)
 - `redesign-existing-projects`, `design-taste-frontend`, `high-end-visual-design` (Leonxlnx/taste-skill)
