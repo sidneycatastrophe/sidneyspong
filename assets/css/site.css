@@ -553,6 +553,7 @@ html:not(.js) .mic .mic-cable { stroke-dashoffset: 0; }
 }
 .lesson-photo img { width: 100%; height: 100%; object-fit: cover; }
 .lesson-list li[data-lesson="1"] .lesson-photo img { object-position: 50% 25%; }
+.lesson-list li[data-lesson="6"] .lesson-photo img { object-position: 50% 4%; }
 .lesson-stage { display: none; }
 .swipe-meta { display: flex; align-items: baseline; justify-content: space-between; margin-top: 22px; }
 .swipe-meta .hand-note { font-size: 1.35rem; transform: rotate(-3deg); transform-origin: left; }
@@ -616,6 +617,7 @@ html:not(.js) .mic .mic-cable { stroke-dashoffset: 0; }
     transition: opacity 0.7s var(--ease-out), transform 1.2s var(--ease-out);
   }
   .lesson-stage img[data-for="1"] { object-position: 50% 25%; }
+  .lesson-stage img[data-for="6"] { object-position: 50% 4%; }
   .lesson-stage img.is-active { opacity: 1; transform: none; }
   .swipe-meta, .lesson-progress { display: none; }
   .lesson-list li { gap: 40px; padding-block: 40px; min-height: min(32vh, 290px); align-content: center; }
